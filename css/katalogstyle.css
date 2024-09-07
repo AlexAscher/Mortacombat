@@ -1,0 +1,726 @@
+body{
+    background-color: rgba(14, 13, 18, 1);
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: 'TT Travels Trl';
+    src: url('../fonts/TTTravelsTrial_Light.otf'); /* Путь к шрифту и его формат */
+    font-weight: 300; /* Можно указать normal или bold */
+}
+
+@font-face {
+    font-family: 'TT Travels Trl';
+    src: url('../fonts/TTTravelsTrial_Regular.otf'); /* Путь к шрифту и его формат */
+    font-weight: 400; /* Можно указать normal или bold */
+}
+
+@font-face {
+    font-family: 'TT Travels Trl';
+    src: url('../fonts/TTTravelsTrial_Medium.otf'); /* Путь к шрифту и его формат */
+    font-weight: 500; /* Можно указать normal или bold */
+}
+
+@font-face {
+    font-family: 'TT Travels Trl';
+    src: url('../fonts/TTTravelsTrial_Bold.otf'); /* Путь к шрифту и его формат */
+    font-weight: 600; /* Можно указать normal или bold */
+}
+
+@font-face {
+    font-family: 'TT Travels Trl';
+    src: url('../fonts/TTTravelsTrial_ExtraBold.otf'); /* Путь к шрифту и его формат */
+    font-weight: 700; /* Можно указать normal или bold */
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+  width: 30px;
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  right: 0;
+  transform: rotate(0);
+  width: 30px;
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+  right: 0;
+  width: 30px;
+}
+
+#menu__toggle:checked ~ .menu__btn{
+    width: 50px;
+}
+.hamburger-menu {
+    position: relative; /* Изменяем позиционирование на relative, чтобы оно реагировало на сетку Bootstrap */
+    display: flex;
+    align-items: center;
+    
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  right: 0;
+  background: #fff;
+color: white;
+text-align: center;
+}
+
+.menu__btn {
+      display: flex;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    width: 57px;
+    height: 10px;
+    cursor: pointer;
+    z-index: 11;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 8px;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+      display: block;
+    position: absolute;
+    width: 29px;
+    height: 2px;
+    background: linear-gradient(0deg, #ECCB66, #ECCB66), linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+    transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  right: -100%;
+  z-index: 10;
+  width: 200px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #fff;
+  transition-duration: .25s;
+  box-shadow: 1px 0px 6px rgb(123, 42, 24);
+}
+.menu_item1{
+    color: black;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.menu_item1:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.menu__box button{
+    width: 80%;
+    border: none;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Golos;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 23px;
+    text-align: center;
+    color: white;
+    background: #7B2A18;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.text_right{
+    text-align: right;
+}
+.text_center{
+    text-align: center;
+}
+.headerr{
+    padding-top: 40px;
+}
+.shop{
+    margin-top: 120px;
+}
+.logo h3{
+    font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 700;
+line-height: 24px;
+text-align: left;
+color: white; 
+margin-left: 10px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.steam h4{
+    font-family: TT Travels Trl;
+font-size: 15px;
+font-weight: 500;
+line-height: 19.2px;
+text-align: left;
+color: white;
+margin-left: 10px;
+}
+
+.bonus button{
+    font-family: TT Travels Trl;
+font-size: 14px;
+font-weight: 700;
+line-height: 20px;
+text-align: center;
+color: #0E0D12;
+background: linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+height: 45.33px;
+width: 135px;
+border-radius: 5px;
+border: none;
+}
+.forpaddings{
+    padding-right: 0;
+    padding-left: 0;
+}
+@media(max-width:768px){
+    .forpaddings{
+        margin-bottom: 20px;
+}
+}
+@media(max-width:568px){
+    .forpaddings{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+.search{
+    display: flex;
+    align-items: center;
+    border: 1px solid #FFFFFF;
+    height: 44px;
+    padding: 10px 30px 10px 30px;
+    justify-content: space-between;
+    border-radius: 8px;
+    width: 100%;
+    
+}
+.bigshapka{
+    display: flex;
+    align-items: end;
+}
+.firstsearch{
+    display: flex;
+    justify-content: start;
+}
+.shapkamini button{
+    font-family: TT Travels Trl;
+font-size: 14px;
+font-weight: 700;
+line-height: 20px;
+text-align: center;
+color: #0E0D12;
+background: linear-gradient(0deg, #ECCB66, #ECCB66),
+linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+padding: 8px 20px 8px 20px;
+border: none;
+border-radius: 8px;
+}
+.search h2{
+    font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 500;
+line-height: 19.2px;
+text-align: left;
+color: white;
+}
+.rightbonus{
+    display: flex;
+    justify-content: end;
+}
+
+.vsetovari{
+    padding: 50px 30px 40px 30px;
+    height: 100%;
+}
+.vsetovari h2{
+    font-family: TT Travels Trl;
+font-size: 18px;
+font-weight: 600;
+line-height: 24px;
+text-align: left;
+color: white;
+text-decoration: underline;
+padding-bottom: 10px;
+}
+.vsetovari h3{
+    font-family: TT Travels Trl;
+font-size: 15px;
+font-weight: 500;
+line-height: 24px;
+text-align: left;
+color: white;
+padding-bottom: 10px;
+}
+details summary {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Aligns text and arrow on opposite sides */
+    align-items: center;
+}
+
+details summary::before {
+    display: none; /* Removes the default arrow marker */
+}
+
+details summary::after {
+    content: url(../img/vectorstrelka.svg); /* The arrow character pointing right */
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    transform: rotate(180deg); /* Rotates the arrow when the details element is open */
+}
+
+details summary::-webkit-details-marker {
+    display: none; /* Hides the default arrow marker */
+}
+details summary{
+    font-family: TT Travels Trl;
+font-size: 18px;
+font-weight: 600;
+line-height: 24px;
+text-align: left;
+color: white;
+text-decoration: underline;
+padding-bottom: 10px;
+}
+details li{
+    font-family: TT Travels Trl;
+    font-size: 15px;
+font-weight: 500;
+line-height: 24px;
+text-align: left;
+color: white;
+padding-bottom: 10px;
+}
+.light{
+    border: 5px solid #36EBCF !important;
+    border-radius: 15px ;
+    
+}
+.novinki{
+    border-top: 5px solid #3760E3;
+    border-bottom: 5px solid #3760E3;
+    border-left: 5px solid #3760E3;
+    border-radius: 15px 0px 0px 15px;
+}
+.maincontainer{
+    margin-top: 70px;
+}
+.mdpixels{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+@media(max-width:568px){
+    .mdpixels{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    
+}
+.alltovars{
+    border-top: 5px solid #3760E3;
+    border-bottom: 5px solid #3760E3; 
+    border-radius: 0px;
+}
+.popularity{
+    border-top: 5px solid #3760E3;
+    border-bottom: 5px solid #3760E3;
+    border-right: 5px solid #3760E3;
+    border-radius: 0px 15px 15px 0px;
+}
+#filter{
+    font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 700;
+line-height: 20px;
+text-align: center;
+background: linear-gradient(276.72deg, #25D0B6 37.56%, #3760E3 99.67%);
+padding: 10px 40px 10px 40px;
+gap: 0px;
+border-radius: 8px;
+opacity: 0px;
+border: none;
+width: 100%;
+color: white;
+margin-top: 3%;
+margin-bottom: 15%;
+}
+.containermain{
+    border: 5px solid #3760E3;
+    border-radius: 5px;
+    margin-top: 70px;
+}
+.shop h2{
+    font-family: TT Travels Trl;
+font-size: 32px;
+font-weight: 600;
+line-height: 24px;
+text-align: left;
+color: white;
+margin-bottom: 40px;
+}
+.price{
+    border: 3px solid #36EBCF;
+    padding: 40px 30px 40px 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.from{
+    padding: 9px 10px 9px 10px;
+    background-color: white;
+    border-radius: 5px;
+    width: 90%;
+}
+.from2{
+    padding: 9px 10px 9px 10px;
+    background-color: white;
+    border-radius: 5px;
+    width: 90%;
+}
+@media(max-width:992px){
+    .from{
+        width: 100%;
+    }
+    .from2{
+        width: 100%;
+    }
+}
+.from h5{
+    font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+text-align: right;
+color: #5B5B5B;
+}
+.from2 h5{
+    font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+text-align: right;
+color: #5B5B5B;
+}
+@media(min-width:992px){
+    .from2{
+        padding-left: 1px;
+    }
+}
+@media(max-width:1200px){
+    .from2{
+        padding-left: 1px;
+    }
+}
+.price h3{
+    font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+text-align: left;
+color: white;
+}
+.price h4{
+    font-family: TT Travels Trl;
+font-size: 14px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+color: white;
+text-align: center;
+}
+.polzunok{
+    margin-top: 18px;
+}
+.polzunok input{
+    width: 100%;
+    
+}
+.slider{
+    -webkit-appearance: none;  /* Переопределение стилей CSS по умолчанию */
+  appearance: none;
+  background: #36EBCF; /* Серый фон */
+  outline: none; /* Удалить контур */
+  opacity: 0.7; /* Установите прозрачность (для эффектов наведения мыши при наведении курсора) */
+  -webkit-transition: .2s; /* 0.2 секундный переход при наведении курсора */
+  transition: opacity .2s;
+  border-radius: 15px;
+}
+.line{
+    height: 8px;
+    background-color: white;
+    width: 100%;
+    position: relative;
+}
+.polzunok img{
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+}
+.genres{
+    width: 100%;
+padding: 40px 30px 40px 30px;
+gap: 20px;
+border-radius: 15px;
+border: 3px;
+opacity: 0px;
+border: 3px solid #36EBCF;
+margin-bottom: 20px;
+}
+
+.whichgenres{
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+}
+.whichgenres h4{
+    font-family: TT Travels Trl;
+font-size: 14px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+color: white;
+margin-left: 10px;
+margin-top: 3px;
+}
+.square{
+    width: 15px;
+height: 15px;
+gap: 0px;
+border: 1px;
+opacity: 0px;
+border: 1px solid #FFFFFF;
+}
+.genres h3{
+    font-family: TT Travels Trl;
+font-size: 20px;
+font-weight: 500;
+line-height: 24px;
+text-align: left;
+color: white;
+padding-bottom: 20px;
+}
+.fight{
+    padding-bottom: 30px;
+}
+.genres2 h3{
+    font-family: TT Travels Trl;
+font-size: 20px;
+font-weight: 500;
+line-height: 24px;
+text-align: left;
+color: white;
+padding-bottom: 20px;
+}
+.genres2{
+    width: 100%;
+
+padding: 40px 30px 40px 30px;
+gap: 20px;
+border-radius: 15px;
+border: 3px;
+opacity: 0px;
+border: 3px solid #36EBCF;
+}
+@media(max-width:992px){
+    .genres2{
+        margin-bottom: 30px;
+    }
+}
+.tovari{
+    
+    padding: 25px;
+    gap: 8px;
+    border-radius: 15px;
+    border: 3px;
+    opacity: 0px;
+    border: 3px solid var(--Blue, #3760E3);
+    position: relative;
+    }
+    .tovari h3{
+    color: white;
+    font-family: TT Travels Trl;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    
+    }
+    .tovari h4{
+    font-family: TT Travels Trl;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    color: white;
+    
+    }
+    .tovari img:nth-of-type(1){
+        margin-bottom: 10px;
+    }
+    .tovari img{
+        width: 100%;
+    
+    
+    }
+    .tovari h5{
+    color: white;
+    font-family: TT Travels Trl;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    }
+    .circles{
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 40px;
+        margin-bottom: 120px;
+    }
+    .circles2{
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 40px;
+        
+    }
+    .logotip{
+        display: flex;
+        align-items: center;
+    }
+    .logotip h2{
+        font-family: TT Travels Trl;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    color: white;
+    margin-left: 10px;
+    }
+    .bottom{
+        margin-top: 150px;
+        margin-bottom: 5%;
+    }
+    .bottom h3{
+        font-family: TT Travels Trl;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+    color: white;
+    margin-bottom: 30px;
+    }
+    .sociallinks{
+        display: flex;
+        align-items: center;
+    }
+    .sociallinks img{
+        margin-right: 20px;
+    }
+    .bottom button{
+        background: linear-gradient(0deg, #ECCB66, #ECCB66),linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+    height: 44px;
+    font-family: TT Travels Trl;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    }
+    .button_right{
+        text-align: right;
+    }
+    .flex{
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .text_rightt h3{
+       text-align: right;
+    }
+    @media(max-width: 1400px){
+        .steam h4{
+            font-size: 12px;
+            line-height: 15.2px;
+        }
+    }
+    
+    @media(max-width: 1200px){
+        .steam h4{
+            font-size: 10px;
+            line-height: 13.2px;
+        }
+        .steam img{
+            width: 12px;
+        }
+        .bonus button{
+            height: 34.5px;
+        }
+        .bonus button{
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+    @media(max-width:992px){
+        .bottom button{
+            width: 100%;
+        }
+        .button_right{
+            text-align: right;
+        }
+        .sociallinks{
+            justify-content: flex-end;
+        }
+        .sociallinks img:nth-of-type(3){
+            margin-right: 0;
+        }
+    }
+    @media(max-width: 768px){
+        .vsetovari{
+            border: 5px solid #36EBCF !important;
+            border-radius: 15px !important;
+        }
+        .forpaddings{
+            padding-right: calc(var(--bs-gutter-x)* .5);
+            padding-left: calc(var(--bs-gutter-x)* .5);
+        }
+    }

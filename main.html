@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/mainstyle.css">
+</head>
+<body> 
+    <header>
+        <div class="container-fluid shapkamini d-block d-lg-none">
+            <div class="row align-items-center dlyamt">
+                <div class="col-md-3 col-sm-8 col-7 logo">
+                    <img src="./img/FeatherIcon.png" alt="">
+                    <h3>Логотип</h3>
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <div class="firstsearch">
+                        <div class="search">
+                            <h2>Поиск</h2>
+                            <img src="./img/lupa.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-5 d-block d-md-none rightbonus">
+                    <div class="row">
+                        <div class="col-8 bonusik">
+                            <button>БОНУС</button>
+                        </div>
+                        <div class="col-4">
+                            <div class="hamburger-menu">
+                                <input id="menu__toggle" type="checkbox"/>
+                                <label class="menu__btn" for="menu__toggle">
+                                    <span></span>
+                                </label>
+                    
+                                <ul class="menu__box">
+                                    <li class="menu__item1 mb-4"><a href="index.html"><img src="img/logo.svg" class="w-100 pr-2 pl-2" alt=""></a></li>
+                        <li><a class="menu_item1" href="index.html" style="padding-right: 0px;">Пополняй Steam</a></li>
+                        <li class="mt-2"><a class="menu_item1" href="catalog.html" style="padding-right: 0px;">Мобильные игры</a></li>
+                        <li class="mt-2"><a class="menu_item1" href="index.html#con" style="padding-right: 0px;">Покупай гифты</a></li>
+                        <li class="mt-2"><a class="menu_item1" href="index.html#con" style="padding-right: 0px;">Покупай ключи</a></li>
+                        <li><a class="menu_item1" href="index.html#con" style="padding-right: 0px;"><button class="mt-4 second_btn_group_main_tovar second_btn_group_main_tovar_fpv" style="color:black">Задать вопрос</button></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-3 text_center d-none d-md-block d-lg-none">
+                    <button>БОНУС</button>
+                </div>
+                <div class="hamburger-menu d-none d-md-block d-lg-none col-md-1 col-2 ">
+                    <input id="menu__toggle" type="checkbox"/>
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+        
+                    <ul class="menu__box">
+                        <li class="menu__item1 mb-4"><a href="index.html"><img src="img/logo.svg" class="w-100 pr-2 pl-2" alt=""></a></li>
+                        <li><a class="menu_item1" href="index.html" style="padding-right: 0px;">Пополняй Steam</a></li>
+                        <li class="mt-2"><a class="menu_item1" href="catalog.html" style="padding-right: 0px;">Мобильные игры</a></li>
+                        <li class="mt-2"><a class="menu_item1" href="index.html#con" style="padding-right: 0px;">Покупай гифты</a></li>
+                        <li><a class="menu_item1" href="index.html#con" style="padding-right: 0px;"><button class="mt-4">Покупай ключи</button></a></li>
+                        <li><a class="menu_item1" href="index.html#con" style="padding-right: 0px;"><button class="mt-4 second_btn_group_main_tovar second_btn_group_main_tovar_fpv" style="color:rgba(123, 42, 24, 1)">Задать вопрос</button></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container headerr d-lg-block d-none">
+            <div class="row">
+                <div class="col-md-2 logo">
+                    <img src="./img/FeatherIcon.png" alt="">
+                    <h3>Логотип</h3>
+                </div>
+                <div class="col-md-2">
+                    <div class="steam">
+                        <img src="./img/money.png" alt="">
+                    <h4>Пополняй Steam</h4>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="steam">
+                        <img src="./img/phone.svg" alt="">
+                    <h4>Мобильные игры</h4>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="steam">
+                        <img src="./img/gift.svg" alt="">
+                    <h4>Покупай гифты</h4>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="steam">
+                        <img src="./img/key.svg" alt="">
+                    <h4>Покупай ключи</h4>
+                    </div>
+                </div>
+                <div class="col-md-2 bonus text_right">
+                    <button>Бонус</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="main">
+        <div class="container d-none d-lg-block">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Покупай и пополняй игры<br>из любой точки мира</h2>
+                </div>
+            </div>
+            <div class="row games">
+                <div class="col-md-6 mt-5">
+                    
+                    <div class="popolnenie">
+                        <div class="donat">
+                            <h3>Пополнение</h3>
+                            <div class="steams">
+                                <h4>STEAM</h4>
+                            </div>
+                        </div>
+                        <img src="./img/steam.svg" alt="" class="imgsteam">
+                        <img src="./img/firststrelka.svg" alt="" class="firststrelka">
+                    </div>
+                    
+                </div>
+                <div class="col-md-3 mt-5">
+                    <div class="gift">
+                        <h2>БОНУС</h2>
+                        <img src="./img/podarok.svg" alt="" class="podarok">
+                        <img src="./img/secondstrelki.svg" alt="" class="secondstrelki">
+                    </div>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <div class="shop">
+                        <h2>Магазин</h2>
+                        <img src="./img/castle.svg" alt="" class="castle">
+                        <img src="./img/secondstrelki.svg" alt="" class="secondstrelki">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="secondmain">
+        <div class="container-fluid mdpixels d-block d-lg-none">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Покупай и пополняй игры<br>из любой точки мира</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-12 mt-5">
+                    <div class="popolnit">
+                        <div class="donat">
+                            <h3>Пополнение</h3>
+                            <div class="steams">
+                                <h4>STEAM</h4>
+                            </div>
+                        </div>
+                        <img src="./img/steam.svg" alt="" class="secondimgsteam">
+                        <img src="./img/firststrelka.svg" alt="" class="firststrelka firststrelka1">
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 mt-5 twoblocks">
+                    <div class="row">
+                        <div class="col-md-12 col-6">
+                            <div class="gift2">
+                                <h2>БОНУС</h2>
+                                <img src="./img/podarok.svg" alt="" class="podarok2">
+                                <img src="./img/secondstrelki.svg" alt="" class="secondstrelki secondstrelki2">
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-6">
+                            <div class="shop2">
+                                <h2>Магазин</h2>
+                                <img src="./img/castle.svg" alt="" class="castle2">
+                                <img src="./img/secondstrelki.svg" alt="" class="secondstrelki secondstrelki2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <section class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-12">  
+                    <div class="codes">
+                        <h2>Коды</h2>
+                        <img src="img/warrior.svg" alt="" class="warrior">
+                        <img src="./img/firststrelka.svg" alt="" class="thirdstrelka">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-12">
+                    <div class="row">
+                        <div class="col-xl-6 col-6">
+                            <div class="skins">
+                                <h2>Скины</h2>
+                                <img src="./img/ump.svg" alt="" class="ump">
+                                <img src="./img/secondstrelki.svg" alt="" class="secondstrelki">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-6">
+                            <div class="mobile">
+                                <h2>Мобильные игры</h2>
+                                <img src="./img/barbarian.svg" alt="" class="barbarian">
+                                <img src="./img/mag.svg" alt="" class="mag">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-6">
+                            <div class="xbox">
+                                <h2>Подписка<br>Xbox PlayStation</h2>
+                                <img src="./img/xbox.svg" alt="" class="xboxik">
+                                <img src="./img/secondstrelki.svg" alt="" class="secondstrelki">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-6">
+                            <div class="bon">
+                                <h2>БОНУС</h2>
+                                <img src="./img/podarok.svg" alt="" class="podarok">
+                                <img src="./img/secondstrelki.svg" alt="" class="secondstrelki">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="popular">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Популярные товары</h2>
+                </div>
+                <div class="col-lg-3 col-md-6 goods">
+                    <div class="tovari">
+                        <img src="./img/mkmini.svg" alt="">
+                        <h3>Mortal Kombat 11 Ultimate Edition</h3>
+                        <h4>ключ STEAM</h4>
+                        <h5>599 ₽</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 shadows">
+                    <div class="tovari">
+                        <img src="./img/shadow.svg" alt="">
+                        <h3>Middle-earth: Shadow of Mordor GOTY Edition</h3>
+                        <h4 id="sec">ключ STEAM</h4>
+                        <h5>299 ₽</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 elder">
+                    <div class="tovari">
+                        <img src="./img/skyrim.svg" alt="">
+                        <h3>The Elder Scrolls V: Skyrim<br>Special Edition</h3>
+                        <h4>ключ STEAM</h4>
+                        <h5>599 ₽</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 arkham">
+                    <div class="tovari">
+                        <img src="./img/batman.svg" alt="">
+                        <h3>Batman Arkham City - Goty Edition на Steam PC</h3>
+                        <h4>ключ STEAM</h4>
+                        <h5>599 ₽</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom d-lg-block d-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="logotip">
+                        <img src="./img/logo.svg" alt="">
+                        <h2>Логотип</h2>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Пополняй Steam</h3>
+                    <h3>Мобильные игры</h3>
+                    <h3>Покупай гифты</h3>
+                    <h3>Покупай ключи</h3>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Поддержка клиентов</h3>
+                    <h3>Контакты</h3>
+                    <div class="sociallinks">
+                        <img src="./img/sobaka.svg" alt="">
+                        <img src="./img/vk.svg" alt="">
+                        <img src="./img/tg.svg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-2 button_right">
+                    <button>Бонус</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom d-block d-lg-none">
+        <div class="container">
+            <div class="row">
+                <div class="flex">
+                    <div class="col-sm-8 col-8">
+                    
+                        <div class="logotip">
+                            <img src="./img/logo.svg" alt="">
+                            <h2>Логотип</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-4 button_right">
+                        <button>Бонус</button>
+                    </div>   
+                </div>
+                
+                <div class="col-sm-8 col-6">
+                    <h3>Пополняй Steam</h3>
+                    <h3>Мобильные игры</h3>
+                    <h3>Покупай гифты</h3>
+                    <h3>Покупай ключи</h3>
+                </div>
+                <div class="col-sm-4 col-6">
+                    <div class="text_rightt">
+                        <h3>Поддержка клиентов</h3>
+                    <h3>Контакты</h3>
+                    <div class="sociallinks">
+                        <img src="./img/sobaka.svg" alt="">
+                        <img src="./img/vk.svg" alt="">
+                        <img src="./img/tg.svg" alt="">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        window.addEventListener('resize', function() {
+    const containers = document.querySelectorAll('.container');
+    if (window.innerWidth < 992) {
+        containers.forEach(container => {
+            container.classList.remove('container');
+            container.classList.add('container-fluid');
+            container.classList.add('mdpixels');
+        });
+    } else {
+        containers.forEach(container => {
+            container.classList.remove('container-fluid');
+            container.classList.add('container');
+        });
+    }
+});
+
+// Выполнить проверку при загрузке страницы
+window.dispatchEvent(new Event('resize'));
+
+    </script>
+</body>

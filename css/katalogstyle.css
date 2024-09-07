@@ -159,7 +159,7 @@ text-align: center;
     padding-top: 40px;
 }
 .shop{
-    margin-top: 120px;
+    margin-top: 10%;
 }
 .logo h3{
     font-family: TT Travels Trl;
@@ -259,7 +259,7 @@ color: white;
 }
 
 .vsetovari{
-    padding: 50px 30px 40px 30px;
+    padding: 40px 30px 40px 30px;
     height: 100%;
 }
 .vsetovari h2{
@@ -285,7 +285,7 @@ details summary {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    margin-bottom: 10px;
+    
     display: flex;
     justify-content: space-between; /* Aligns text and arrow on opposite sides */
     align-items: center;
@@ -315,7 +315,7 @@ line-height: 24px;
 text-align: left;
 color: white;
 text-decoration: underline;
-padding-bottom: 10px;
+
 }
 details li{
     font-family: TT Travels Trl;
@@ -439,10 +439,28 @@ color: #5B5B5B;
     .from2{
         padding-left: 1px;
     }
+    .from{
+        padding-left: 1px;
+    }
+    .from2{
+        width: 100%;
+    }
+    .from{
+        width: 100%;
+    }
 }
 @media(max-width:1200px){
     .from2{
         padding-left: 1px;
+    }
+    .from{
+        padding-left: 1px;
+    }
+    .from2{
+        width: 100%;
+    }
+    .from{
+        width: 100%;
     }
 }
 .price h3{
@@ -533,9 +551,7 @@ text-align: left;
 color: white;
 padding-bottom: 20px;
 }
-.fight{
-    padding-bottom: 30px;
-}
+
 .genres2 h3{
     font-family: TT Travels Trl;
 font-size: 20px;

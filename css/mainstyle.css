@@ -13,7 +13,6 @@ body{
     src: url('../fonts/TTTravelsTrial_Regular.otf'); /* Путь к шрифту и его формат */
     font-weight: 400; /* Можно указать normal или bold */
 }
-
 @font-face {
     font-family: 'TT Travels Trl';
     src: url('../fonts/TTTravelsTrial_Medium.otf'); /* Путь к шрифту и его формат */

@@ -31,7 +31,9 @@ body{
     src: url('../fonts/TTTravelsTrial_ExtraBold.otf'); /* Путь к шрифту и его формат */
     font-weight: 700; /* Можно указать normal или bold */
 }
-
+.try{
+    font-size: 10px;
+}
 #menu__toggle {
   opacity: 0;
 }

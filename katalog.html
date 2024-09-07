@@ -170,7 +170,7 @@
                             <div class="col-6">
                                 <h4>от</h4>
                                 <div class="from">
-                                    <h5>1</h5>
+                                    <h5 class="eto">1</h5>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -181,7 +181,7 @@
                             </div>
                         </div>
                         <div class="polzunok">
-                            <input type="range" min="0" max="10000" step="1" value="1" class="slider">
+                            <input type="range" min="0" max="10000" step="1" value="100" class="slider">
                         </div>
                     </div>
                     <div class="genres d-lg-none d-block">
@@ -613,6 +613,15 @@
             });
         });
         </script>
-</body>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.querySelector('.slider');
+        const fromH5 = document.querySelector('.eto');
 
+        slider.addEventListener('input', function() {
+            fromH5.textContent = slider.value;
+        });
+    });
+        </script>
+</body>
 </html>

@@ -578,34 +578,73 @@ border: 3px solid #36EBCF;
         margin-bottom: 30px;
     }
 }
-.carousel-container {
+.carusel{
+    min-width: 0;
     position: relative;
-    width: 100%;
+    padding: 0px 40px;
+}
+.carusel_item{
+    justify-self: center;
+}
+.slick-slider{
+
+}
+.slick-list{
     overflow: hidden;
 }
-
-.carousel {
+.slick-track{
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    align-items: flex-start;
 }
-
-.carousel-control {
+.carusel .slick-arrow{
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    margin: -30px 0 0 0;
+}
+.carusel .slick-arrow.slick-prev{
+    left: 0;
+    background: url(../img/icons8-шеврон-влево-96.png) 0 0 / 100% no-repeat;
     color: white;
     border: none;
-    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 70px;
     cursor: pointer;
+    font-size: 0;
+    line-height: 40px;
 }
-
-.carousel-control.prev {
-    left: 10px;
+.carusel .slick-arrow.slick-next{   
+    right: 0;
+    background: url(../img/icons8-шеврон-вправо-96.png) 0 0 / 100% no-repeat;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 70px;
+    cursor: pointer;
+    font-size: 0;
+    line-height: 40px;
 }
-
-.carousel-control.next {
-    right: 10px;
+.carusel .slick-dots{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carusel .slick-dots li{
+        list-style: none;
+        margin: 10px 10px;
+}
+.carusel .slick-dots button{
+    font-size: 0;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+}
+.carusel .slick-dots li.slick-active button{
+    background-color: transparent;
+    border: 1px solid white;
 }
 .tovari{
     

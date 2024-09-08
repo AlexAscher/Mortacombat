@@ -13,7 +13,6 @@ body{
     src: url('../fonts/TTTravelsTrial_Regular.otf'); /* Путь к шрифту и его формат */
     font-weight: 400; /* Можно указать normal или bold */
 }
-
 @font-face {
     font-family: 'TT Travels Trl';
     src: url('../fonts/TTTravelsTrial_Medium.otf'); /* Путь к шрифту и его формат */
@@ -151,6 +150,7 @@ text-align: center;
 
 .text_right{
     text-align: right;
+    align-self: center;
 }
 .text_center{
     text-align: center;
@@ -205,7 +205,68 @@ margin-left: 10px;
     padding: 10px 10px 10px 10px;
     max-width: 100%;
 }
-
+.bonus button{
+    font-family: TT Travels Trl;
+font-size: 14px;
+font-weight: 700;
+line-height: 20px;
+text-align: center;
+color: #0E0D12;
+background: linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+padding: 12px 40px 12px 40px;
+border-radius: 5px;
+border: none;
+}
+.search{
+    display: flex;
+    align-items: center;
+    border: 1px solid #FFFFFF;
+    height: 44px;
+    padding: 10px 30px 10px 30px;
+    justify-content: space-between;
+    border-radius: 8px;
+    width: 100%;
+    
+}
+.bigshapka{
+    display: flex;
+    align-items: end;
+}
+.firstsearch{
+    display: flex;
+    justify-content: start;
+}
+.shapkamini{
+    padding-right: 60px;
+    padding-left: 60px;
+}
+@media(max-width:568px){
+    .shapkamini{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+.shapkamini button{
+    font-family: TT Travels Trl;
+font-size: 14px;
+font-weight: 700;
+line-height: 20px;
+text-align: center;
+color: #0E0D12;
+background: linear-gradient(0deg, #ECCB66, #ECCB66),
+linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+padding: 8px 20px 8px 20px;
+border: none;
+border-radius: 8px;
+}
+.search h2{
+    font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 500;
+line-height: 19.2px;
+text-align: left;
+color: white;
+}
 @media(max-width:430px){
     .logo{
         width: 50%;
@@ -215,240 +276,768 @@ margin-left: 10px;
     }
 }
 .main{
+    margin-top: 5%;
+}
+.main h2{
+font-family: TT Travels Trl;
+font-size: 50px;
+font-weight: 600;
+line-height: 60px;
+text-align: left;
+color: #FFFFFF;
+text-align: center;
+}
+.secondmain  h2{
+    font-family: TT Travels Trl;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: left;
+    color: #FFFFFF;
+    text-align: center;
+    }
+.popolnenie{
+    background: linear-gradient(161.69deg, #25D0B6 39.73%, #3760E3 87.81%);
+    width: 100%;
+}
+.donat h3{
+font-family: TT Travels Trl;
+font-size: 32px;
+font-weight: 600;
+line-height: 38.4px;
+text-align: left;
+color: black;
+    }
+.donat{
+    padding-top: 20px;
+    padding-left: 20px;
     
-    align-items: flex-start;
+}
+.steams{
+    background: 
+linear-gradient(180deg, #111D2E 0%, #051839 19.5%, #0A1B48 32.5%, #132E62 49.5%, #144B7E 69%, #136497 84.5%, #1387B8 100%);
+border-radius: 8px;
+width: max-content;
+}
+.steams h4{
+    font-family: TT Travels Trl;
+font-size: 38px;
+font-weight: 600;
+line-height: 45.6px;
+text-align: left;
+color: white;
+padding: 10px 8px 10px 8px;
+}
+.popolnenie{
+    border-radius: 30px;
+    position: relative;
+    height: 300px;
+}
+.imgsteam{
+    position: absolute;
+    width: 297.21px;
+height: 342.18px;
+top: -20px;
+right: 0;
+gap: 0px;
+opacity: 0px;
+z-index: 0;
 }
 
-.main h2{
-    font-family: TT Travels Trl;
-font-size: 32px;
-font-weight: 500;
-line-height: 38.4px;
-text-align: left;
-color: white;
-margin-bottom: 4%;
+.mdpixels{
+    padding-left: 60px;
+    padding-right: 60px;
 }
-.main p{
-    font-family: TT Travels Trl;
-font-size: 24px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
-color: #E8E8E8;
-}
-.price h3{
-    font-family: TT Travels Trl;
-font-size: 18px;
-font-weight: 700;
-line-height: 20px;
-color: white;
-margin-top: 25%;
-text-align: center;
-margin-bottom: 20px;
-}
-.price button{
-    background: linear-gradient(96.72deg, #25D0B6 38.61%, #3760E3 99.08%);
-    font-family: TT Travels Trl;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 20px;
-    text-align: center;
-color: white; 
-width: 100%;   
-padding: 10px 40px 10px 40px;
-border: none;
-}
-@media(max-width:992px){
-    .main h2{
-        margin-top: 20px;
-        margin-bottom: 2%;
-        font-family: TT Travels Trl;
-font-size: 32px;
-font-weight: 500;
-line-height: 38.4px;
-text-align: left;
-color: white;
-    }
-    .main p{
-        font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
-color: #E8E8E8;
-margin-bottom: 7%;
-    }
-    .price button{
-        font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 700;
-line-height: 20px;
-text-align: center;
-color: #FFFFFF;
+@media(max-width:568px){
+    .mdpixels{
+        padding-right: 20px;
+        padding-left: 20px;
     }
     
 }
-.rating h3{
+.secondimgsteam{
+    position: absolute;
+    width: 290px;
+height: 100%;
+bottom: 0px;
+right: 0px;
+gap: 0px;
+opacity: 0px;
+z-index: 0;
+}
+.popolnit{
+    position: relative; 
+    background: linear-gradient(161.69deg, #25D0B6 39.73%, #3760E3 87.81%);
+    width: 100%;
+    background-repeat: 8px;
+    height: 326px;
+    border-radius: 8px;
+}
+.popolnit h3{
     font-family: TT Travels Trl;
-font-size: 18px;
-font-weight: 500;
-line-height: 24px;
+font-size: 26px;
+font-weight: 600;
+line-height: 31.2px;
+text-align: left;
+color: black;
+}
+.popolnit h4{
+    font-family: TT Travels Trl;
+font-size: 30px;
+font-weight: 600;
+line-height: 36px;
 text-align: left;
 color: white;
-margin-bottom: 8px;
 }
-.rate{
-    display: flex;
-    align-items: center;
+.blackline{
+    width: 100%;
+    background-color: rgba(14, 13, 18, 1);
+    height: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.firststrelka{
+bottom: 30px;
+left: 30px;
+gap: 0px;
+opacity: 0px;
+position: absolute;
+}
+@media(max-width:568px){
+    .firststrelka1{
+        width: 18px;
+height: 17px;
+bottom: 15px;
+left: 15px;
+    }
+}
+.gift{
+    background: linear-gradient(132.71deg, #3791FD 23.81%, #8ED7E5 70.02%);
+    position: relative;
+}
+.gift h2{
+color: #0E0D12;
+font-family: TT Travels Trl;
+font-size: 32px;
+font-weight: 600;
+line-height: 38.4px;
+text-align: left;
+padding-top: 20px;
+padding-left: 20px;
+}
+.podarok{
+    width: 265px;
+
+bottom: 0;
+right: 0;
+gap: 0px;
+opacity: 0px;
+position: absolute;
+}
+
+.gift{
+    
+height: 300px;
+gap: 0px;
+border-radius: 30px ;
+opacity: 0px;
+}
+.gift2{
+    
+height: 153px;
+gap: 0px;
+border-radius: 8px ;
+opacity: 0px;
+background: linear-gradient(132.71deg, #3791FD 23.81%, #8ED7E5 70.02%);
+position: relative;
+}
+.gift h2{
+    font-family: TT Travels Trl;
+font-size: 20px;
+font-weight: 600;
+line-height: 24px;
+text-align: left;
+color: black;
+
+}
+.gift2 h2{
+    font-family: TT Travels Trl;
+font-size: 20px;
+font-weight: 600; 
+line-height: 24px;
+text-align: left;
+color: black;
+padding-top: 15px;
+padding-left: 15px;
+}
+.podarok2{
+    width: 161px;
+height: 153px;
+right: 0;
+bottom: 0;
+gap: 0px;
+opacity: 0px;
+position: absolute;
+}
+
+.secondstrelki{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+@media(max-width:1200px){
+    .imgsteam{
+        width: 250px;
+    }
+    .podarok{
+        width: 220px;
+    }
+}
+.shop{
+    background: linear-gradient(161.69deg, #3791FD 39.73%, #3760E3 87.81%);
+    position: relative;
+    overflow:hidden;
+height: 300px;
+gap: 0px;
+border-radius: 30px;
+opacity: 0px;
+
+}
+.shop h2{
+color: #0E0D12;
+font-family: TT Travels Trl;
+font-size: 32px;
+font-weight: 600;
+line-height: 38.4px;
+text-align: left;
+padding-top: 20px;
+padding-left: 20px;
+}
+.shop2{
+margin-top: 22px;
+height: 153px;
+gap: 0px;
+border-radius: 8px;
+opacity: 0px;
+position: relative;
+background: linear-gradient(161.69deg, #3791FD 39.73%, #3760E3 87.81%);
+overflow: hidden;
+}
+.shop2 h2{
+    font-family: TT Travels Trl;
+font-size: 20px;
+font-weight: 600;
+line-height: 24px;
+text-align: left;
+padding-top: 15px;
+padding-left: 15px;
+color: black;
+}
+.castle{
+    position: absolute;
+    width: 313px;
+height: 313px;
+bottom: 0;
+left: 15px;
+gap: 0px;
+opacity: 0px;
+
+}
+.castle2{
+    width: 148px;
+
+bottom: 0;
+right: 0;
+gap: 0px;
+opacity: 0px;
+position: absolute;
+}
+@media(max-width:875px){
+    .podarok2{
+        width: 125px;
+    }
+    .castle2{
+        width: 115px;
+    }
+}
+@media(max-width:815px){
+    .secondimgsteam{
+        width: 260px;
+    }
+}
+@media(max-width:768px){
+    .shop2{
+        margin-top: 0;
+    }
+}
+@media(max-width:768px){
+    .secondimgsteam{
+        width: 280px;
+    }
+    .podarok2{
+        width: 145px;
+    }
+    .castle2{
+        width: 145px;
+    }
+    .gift2 h2{
+        font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 600;
+line-height: 19.2px;
+text-align: left;
+
+    }
+    .shop2 h2{
+        font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 600;
+line-height: 19.2px;
+text-align: left;
+
+    }
+    
+}
+@media(max-width:568px){
+    .secondimgsteam{
+        width: 150.9px;
+height: 194.15px;
+bottom: -22px;
+
+    }
+    .popolnit{
+        
+height: 152px;
+gap: 0px;
+border-radius: 8px;
+opacity: 0px;
+
+    }
+    .podarok2{
+        width: 115px;
+height: 127px;
+
+
+    }
+    .gift2 h2{
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+    .donat{
+        padding-left: 15px;
+        padding-top: 15px;
+    }
+    .castle2{
+        width: 115px;
+    }
+    .shop2 h2{
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+    .secondstrelki2{
+        width: 10px;
+height: 9px;
+bottom: 10px;
+left: 10px;
+
+    }
+    .twoblocks{
+        margin-top: 20px !important;
+    }
+}
+.features{
+    margin-top: 12%;
+    margin-bottom: 12%;
+}
+.codes{
+    background: linear-gradient(161.69deg, #25D0B6 39.73%, #3760E3 87.81%);
+    position: relative;
+    
+height: 620px;
+gap: 0px;
+border-radius: 30px;
+opacity: 0px;
+
+}
+@media(max-width:1200px){
+    .codes{
+        margin-bottom: 20%;
+    }
+}
+.codes h2{
+    font-family: TT Travels Trl;
+font-size: 50px;
+font-weight: 600;
+line-height: 60px;
+text-align: left;
+color: #0E0D12;
+padding-top: 40px;
+padding-left: 40px;
+}
+.warrior{
+    width: 545px;
+bottom: 0;
+right: 0;
+gap: 0px;
+opacity: 0px;
+position: absolute;
+}
+@media(max-width:710px){
+    .warrior{
+        width: 450px;
+    }
+}
+
+.thirdstrelka{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+}
+@media(max-width:568px){
+    .warrior{
+        width: 295px;
+        height: 316px;
+    }
+    .codes{
+height: 336px;
+gap: 0px;
+border-radius: 15px;
+opacity: 0px;
+
+    }
+    .codes h2{
+        font-family: TT Travels Trl;
+font-size: 27px;
+font-weight: 600;
+line-height: 32.4px;
+text-align: left;
+
+    }
+    .codes h2{
+        padding-top: 25px;
+        padding-left: 25px;
+    }
+    .thirdstrelka{
+        width: 20px;
+height: 19px;
+top: 292px;
+left: 25px;
+gap: 0px;
+bottom: 25px;
+left: 25px;
+    }
+    .popolnit h3{
+        font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 600;
+line-height: 19.2px;
+text-align: left;
+
+    }
+    .popolnit h4{
+        font-family: TT Travels Trl;
+font-size: 20px;
+font-weight: 600;
+line-height: 24px;
+text-align: left;
+padding: 5px 4px 5px 4px;
+    }
+
+}
+.skins{
+    background: linear-gradient(161.69deg, #16BED0 39.73%, #283BB0 87.81%);
+position: relative;
+overflow: hidden;
+height: 300px;
+gap: 0px;
+border-radius: 30px;
+opacity: 0px;
+padding-top: 20px;
+padding-left: 20px;
+margin-bottom: 20px;
+}
+.skins h2{
+font-family: TT Travels Trl;
+font-size: 32px;
+font-weight: 600;
+line-height: 38.4px;
+text-align: left;
+color: #0E0D12;
+}
+.ump{
+position: absolute;
+bottom: 0;
+right: 0;
+}
+.bon h2{
+    font-family: TT Travels Trl;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 38.4px;
+    text-align: left;
+    color: #0E0D12;
+    }
+.xbox h2{
+    font-family: TT Travels Trl;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 38.4px;
+    text-align: left;
+    color: #0E0D12;
+    }
+.mobile h2{
+    font-family: TT Travels Trl;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 38.4px;
+    text-align: left;
+    color: #0E0D12;
+    }
+.mobile{
+    background: linear-gradient(161.69deg, #3791FD 39.73%, #3760E3 87.81%);
+
+position: relative;
+overflow: hidden;
+height: 300px;
+gap: 0px;
+border-radius: 30px;
+opacity: 0px;
+padding-top: 20px;
+padding-left: 20px;
+margin-bottom: 20px;
+}
+.mobile{
+    background: linear-gradient(161.69deg, #3791FD 39.73%, #3760E3 87.81%);
+
+position: relative;
+overflow: hidden;
+height: 300px;
+gap: 0px;
+border-radius: 30px;
+opacity: 0px;
+padding-top: 20px;
+padding-left: 20px;
+margin-bottom: 20px;
+}
+.bon{
+    background: linear-gradient(132.71deg, #3791FD 23.81%, #8ED7E5 70.02%);
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    gap: 0px;
+    border-radius: 30px;
+    opacity: 0px;
+    padding-top: 20px;
+    padding-left: 20px;
     margin-bottom: 20px;
 }
-.rating{
-    padding: 20px;
+.xbox{
+    background: linear-gradient(161.69deg, #16BED0 39.73%, #283BB0 87.81%);
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    gap: 0px;
+    border-radius: 30px;
+    opacity: 0px;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
 }
-.rate img{
-    margin-right: 10px;
+.barbarian{
+    position: absolute;
+    
+bottom: 0;
+right: 90px;
+gap: 0px;
+opacity: 0px;
+rotate: -180 deg;
+z-index: 2;
 }
-.rate p{
-    font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
+.mag{
+position: absolute;
+bottom: 0;
+right: 0;
+gap: 0px;
+opacity: 0px;
+rotate: -180 deg;
+z-index: 1;
+}
+.xboxik{
+bottom: 0;
+right: 0;
+gap: 0px;
+opacity: 0px;
+rotate: 21.63 deg;
+position: absolute;
+}
+@media(max-width:740px){
+    .ump{
+        width: 200px;
+    }
+    .barbarian{
+        width: 150px;
+    }
+    .mag{
+        width: 150px;
+    }
+}
+@media(max-width:666px){
+    .skins h2{
+        font-family: TT Travels Trl;
+font-size: 28px;
+font-weight: 600;
+line-height: 19.2px;
 text-align: left;
+    }
+.mobile h2{
+    font-size: 28px;
+}
+.xbox h2{
+    font-size: 28px;
+}
+.bon h2{
+    font-size: 28px;
+}
+}
+@media(max-width:568px){
+    .skins{
+        width: 100%;
+height: 153px;
+padding-top: 10px;
+padding-left: 10px;
+border-radius: 8px;
+    }
+    .ump{
+        width: 196px;
+height: 127px;
+right: -25px;
+
+    }
+    .skins h2{
+        font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 600;
+line-height: 19.2px;
+text-align: left;
+
+    }
+    .mobile{
+        width: 100%;
+height: 153px;
+padding-top: 10px;
+padding-left: 10px;
+border-radius: 8px;
+    }
+    .mobile h2{
+        font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 600;
+line-height: 19.2px;
+text-align: left;
+
+    }
+    .barbarian{
+        width: 80px;
+    }
+    .mag{
+        width: 80px;
+    }
+    .xbox{
+        width: 100%;
+height: 153px;
+padding-top: 10px;
+padding-left: 10px;
+border-radius: 8px;
+    }
+    .xboxik{
+        width: 98px;
+    }
+    .xbox h2{
+        font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 600;
+line-height: 19.2px;
+text-align: left;
+
+    }
+    .bon{
+        width: 100%;
+height: 153px;
+padding-top: 10px;
+padding-left: 10px;
+border-radius: 8px;
+    }
+    .podarok{
+        width: 115px;
+    }
+    .bon h2{
+        font-family: TT Travels Trl;
+font-size: 16px;
+font-weight: 600;
+line-height: 19.2px;
+text-align: left;
+
+    }
+}
+.popular h2{
 color: white;
-}
-.rating h4{
-    font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
-color: #E8E8E8;
-margin-bottom: 20px;
-}
-.rating h4:nth-of-type(3){
-    margin-bottom: 0;
-}
-.paying h4{
-    font-family: TT Travels Trl;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    text-align: left;
-color: white;    
-}
-.sec2{
-    margin-top: 10%;
-}
-.sec2 h2{
-    font-family: TT Travels Trl;
+font-family: TT Travels Trl;
 font-size: 32px;
 font-weight: 600;
-line-height: 24px;
+line-height: 38.4px;
 text-align: left;
-color: white;
+margin-bottom: 40px;
 }
+.tovari{
+height: 420px;
+padding: 25px;
+gap: 8px;
+border-radius: 15px;
+border: 3px;
+opacity: 0px;
+border: 3px solid var(--Blue, #3760E3);
+position: relative;
 
-.desc h3{
-    font-family: TT Travels Trl;
-font-size: 24px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
-color: #E8E8E8;
-margin-bottom: 10%;
 }
-.desc h3:nth-of-type(3){
-    margin-bottom: 0;
-}
-.right h4{
-    color: white;
-}
-.seconddesc{
-    border: 4px solid var(--Blue, #3760E3);
-    border-radius: 10px;
-    padding: 20px;
-    margin-right: 20px;
-}
-.mkcircle{
-    width: 100px;
-}
-@media(max-width:992px){
-    .sec2 h2{
-        font-family: TT Travels Trl;
-font-size: 24px;
-font-weight: 600;
-line-height: 24px;
-text-align: left;
-
-    }
-    .desc h3:nth-of-type(2){
-        display: none;
-    }
-    .desc h3:nth-of-type(3){
-        display: none;
-    }
-    .desc h3:nth-of-type(1){
-        margin-bottom: 0;
-    }
-    .seconddesc{
-        margin-bottom: 20px;
-        margin-right: 0;
-    }
-    .right img{
-        margin-right: 20px;
-    }
-}
-.right h5{
-    font-family: TT Travels Trl;
-font-size: 18px;
-font-weight: 700;
-line-height: 20px;
-text-align: left;
+.tovari h3{
 color: white;
-}
-.descc{
-    margin-top: 2%;
-}
-.right button{
-    font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 700;
-line-height: 20px;
-text-align: center;
-background: linear-gradient(96.72deg, #25D0B6 38.61%, #3760E3 99.08%);
-color: white;
-width: 100%;
-padding-top: 10px;
-padding-bottom: 10px;
-border-radius: 10px;
-border: none;
-margin-top: 25px;
-}
-.mkmk{
-    display: flex;
-    border: 4px solid var(--Blue, #3760E3);
-    border-radius: 10px;
-    align-items: center;
-    padding: 20px 20px 20px 20px;
-}
-.minimk{
-    display: flex;
-    align-items: center;
-}
-.right img{
-    width: 60px;
-    height: 60px;
-}
-.mkmk h4{
-    font-family: TT Travels Trl;
+font-family: TT Travels Trl;
 font-size: 14px;
 font-weight: 400;
-line-height: 16px;
+line-height: 24px;
+text-align: left;
+
+}
+.tovari h4{
+font-family: TT Travels Trl;
+font-size: 14px;
+font-weight: 300;
+line-height: 24px;
 text-align: left;
 color: white;
+
 }
-.mkmk h5{
-    margin-top: 25px;
+.tovari img:nth-of-type(1){
+    margin-bottom: 10px;
+}
+.tovari img{
+    width: 100%;
+
+
+}
+.tovari h5{
+color: white;
+font-family: TT Travels Trl;
+font-size: 24px;
+font-weight: 500;
+line-height: 24px;
+position: absolute;
+bottom: 25px;
+right: 25px;
+}
+#sec{
+    margin-bottom: 0;
 }
 .logotip{
     display: flex;
@@ -483,6 +1072,22 @@ margin-bottom: 30px;
 .sociallinks img{
     margin-right: 20px;
 }
+@media(max-width:992px){
+    .tovari{
+        height: 100%;
+    }
+    .goods{
+        margin-bottom: 30px;
+    }
+    .shadows{
+        margin-bottom: 30px;
+    }
+}
+@media(max-width:568px){
+    .elder{
+        margin-bottom: 30px;
+    }
+}
 .bottom button{
     background: linear-gradient(0deg, #ECCB66, #ECCB66),linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
 height: 44px;
@@ -507,40 +1112,8 @@ width: 100%;
 .text_rightt h3{
    text-align: right;
 }
-@media(max-width: 1400px){
-    .steam h4{
-        font-size: 12px;
-        line-height: 15.2px;
-    }
-}
-
-@media(max-width: 1200px){
-    .steam h4{
-        font-size: 10px;
-        line-height: 13.2px;
-    }
-    .steam img{
-        width: 12px;
-    }
-    .bonus button{
-        height: 34.5px;
-    }
-    .bonus button{
-        font-size: 12px;
-        line-height: 18px;
-    }
-}
-@media(max-width:992px){
-    .bottom button{
+@media(max-width:1400px){
+    .tovari img{
         width: 100%;
-    }
-    .button_right{
-        text-align: right;
-    }
-    .sociallinks{
-        justify-content: flex-end;
-    }
-    .sociallinks img:nth-of-type(3){
-        margin-right: 0;
     }
 }

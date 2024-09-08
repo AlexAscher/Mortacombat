@@ -187,19 +187,7 @@ color: white;
 margin-left: 10px;
 }
 
-.bonus button{
-    font-family: TT Travels Trl;
-font-size: 14px;
-font-weight: 700;
-line-height: 20px;
-text-align: center;
-color: #0E0D12;
-background: linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
-height: 45.33px;
-width: 135px;
-border-radius: 5px;
-border: none;
-}
+
 .forpaddings{
     padding-right: 0;
     padding-left: 0;
@@ -241,8 +229,7 @@ font-weight: 700;
 line-height: 20px;
 text-align: center;
 color: #0E0D12;
-background: linear-gradient(0deg, #ECCB66, #ECCB66),
-linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+background:linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
 padding: 8px 20px 8px 20px;
 border: none;
 border-radius: 8px;
@@ -394,6 +381,12 @@ line-height: 24px;
 text-align: left;
 color: white;
 margin-bottom: 40px;
+margin-left: 40px;
+}
+@media(max-width:576px){
+    .shop h2{
+        margin-left: 20px;
+    }
 }
 .price{
     border: 3px solid #36EBCF;
@@ -588,6 +581,8 @@ border: 3px solid #36EBCF;
 }
 .carusel_item{
     justify-self: center;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 .slick-slider{
 
@@ -603,7 +598,7 @@ border: 3px solid #36EBCF;
     position: absolute;
     top: 50%;
     z-index: 10;
-    margin: -30px 0 0 0;
+    margin: -45px 0 0 0;
 }
 .carusel .slick-arrow.slick-prev{
     left: 0;
@@ -628,6 +623,19 @@ border: 3px solid #36EBCF;
     cursor: pointer;
     font-size: 0;
     line-height: 40px;
+}
+@media(max-width:576px){
+    .carusel .slick-arrow.slick-next{
+        width: 30px;
+        height: 30px;
+    }
+    .carusel .slick-arrow.slick-prev{
+        width: 30px;
+        height: 30px;
+    }
+    .carusel{
+        padding: 0px 20px;
+    }
 }
 .carusel .slick-dots{
     display: flex;

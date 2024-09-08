@@ -5,7 +5,7 @@ $("document").ready(function() {
         adaptiveHeight:true,
         slidesToShow: 3,
         speed:800,
-        autoplay:true,
+        autoplay:false,
         autoPlaySpeed:5000,
         centerMode:true,
     });

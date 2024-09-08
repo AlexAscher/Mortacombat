@@ -340,30 +340,43 @@
                 
                 <div class="col-lg-9">
                     <div class="row">
-                        <div class=" col-md-4 col-6 goods">
-                            <div class="tovari">
-                                <img src="./img/mkmini.svg" alt="">
-                                <h3>Mortal Kombat 11 Ultimate Edition</h3>
-                                <h4>ключ STEAM</h4>
-                                <h5>599 ₽</h5>
+                        <div class="carousel-container">
+                            <div class="carousel">
+                                <div class="col-md-4 col-6 goods">
+                                    <div class="tovari">
+                                        <img src="./img/mkmini.svg" alt="">
+                                        <h3>Mortal Kombat 11 Ultimate Edition</h3>
+                                        <h4>ключ STEAM</h4>
+                                        <h5>599 ₽</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6 shadows">
+                                    <div class="tovari">
+                                        <img src="./img/shadow.svg" alt="">
+                                        <h3>Middle-earth: Shadow of Mordor GOTY Edition</h3>
+                                        <h4 id="sec">ключ STEAM</h4>
+                                        <h5>299 ₽</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-md-block d-none elder">
+                                    <div class="tovari">
+                                        <img src="./img/skyrim.svg" alt="">
+                                        <h3>The Elder Scrolls V: Skyrim<br>Special Edition</h3>
+                                        <h4>ключ STEAM</h4>
+                                        <h5>599 ₽</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-6 goods">
+                                    <div class="tovari">
+                                        <img src="./img/newgame.svg" alt="">
+                                        <h3>New Game Title</h3>
+                                        <h4>ключ STEAM</h4>
+                                        <h5>499 ₽</h5>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class=" col-md-4 col-6 shadows">
-                            <div class="tovari">
-                                <img src="./img/shadow.svg" alt="">
-                                <h3>Middle-earth: Shadow of Mordor GOTY Edition</h3>
-                                <h4 id="sec">ключ STEAM</h4>
-                                <h5>299 ₽</h5>
-                            </div>
-                        </div>
-                        <div class=" col-md-4 d-md-block d-none elder">
-                            <div class="tovari">
-                                <img src="./img/skyrim.svg" alt="">
-                                <h3>The Elder Scrolls V: Skyrim<br>Special Edition</h3>
-                                <h4>ключ STEAM</h4>
-                                <h5>599 ₽</h5>
-                                
-                            </div>
+                            <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
+                            <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
                         </div>
                     </div>
                     <div class="circles">
@@ -622,6 +635,9 @@
             fromH5.textContent = slider.value;
         });
     });
+        </script>
+        <script>
+            
         </script>
 </body>
 </html>

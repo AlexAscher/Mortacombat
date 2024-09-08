@@ -751,7 +751,7 @@ border: 3px solid #36EBCF;
         margin-right: 20px;
     }
     .bottom button{
-        background: linear-gradient(0deg, #ECCB66, #ECCB66),linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+        background: linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
     height: 44px;
     font-family: TT Travels Trl;
     font-size: 14px;

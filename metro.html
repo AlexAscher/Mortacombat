@@ -1,0 +1,297 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/tovars.css">
+</head>
+<body> 
+    <header>
+        <div class="container-fluid shapkamini d-block d-lg-none">
+            <div class="row align-items-center dlyamt">
+                <div class="col-md-3 col-sm-8 col-7 logo">
+                    <img src="./img/FeatherIcon.png" alt="">
+                    <h3>Логотип</h3>
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <div class="firstsearch">
+                        <div class="search">
+                            <h2>Поиск</h2>
+                            <img src="./img/lupa.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-5 d-block d-md-none rightbonus">
+                    <div class="row">
+                        <div class="col-8 bonusik">
+                            <button>БОНУС</button>
+                        </div>
+                        <div class="col-4">
+                            <div class="hamburger-menu">
+                                <input id="menu__toggle" type="checkbox"/>
+                                <label class="menu__btn" for="menu__toggle">
+                                    <span></span>
+                                </label>
+                    
+                                <ul class="menu__box">
+                                    <li class="menu__item1 mb-4"><a href="index.html"><img src="img/logo.svg" class="w-100 pr-2 pl-2" alt=""></a></li>
+                        <li><a class="menu_item1" href="index.html" style="padding-right: 0px;">Пополняй Steam</a></li>
+                        <li class="mt-2"><a class="menu_item1" href="catalog.html" style="padding-right: 0px;">Мобильные игры</a></li>
+                        <li class="mt-2"><a class="menu_item1" href="index.html#con" style="padding-right: 0px;">Покупай гифты</a></li>
+                        <li class="mt-2"><a class="menu_item1" href="index.html#con" style="padding-right: 0px;">Покупай ключи</a></li>
+                        <li><a class="menu_item1" href="index.html#con" style="padding-right: 0px;"><button class="mt-4 second_btn_group_main_tovar second_btn_group_main_tovar_fpv" style="color:black">Задать вопрос</button></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-3 text_center d-none d-md-block d-lg-none">
+                    <button>БОНУС</button>
+                </div>
+                <div class="hamburger-menu d-none d-md-block d-lg-none col-md-1 col-2 ">
+                    <input id="menu__toggle" type="checkbox"/>
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+        
+                    <ul class="menu__box">
+                        <li class="menu__item1 mb-4"><a href="index.html"><img src="img/logo.svg" class="w-100 pr-2 pl-2" alt=""></a></li>
+                        <li><a class="menu_item1" href="index.html" style="padding-right: 0px;">Пополняй Steam</a></li>
+                        <li class="mt-2"><a class="menu_item1" href="catalog.html" style="padding-right: 0px;">Мобильные игры</a></li>
+                        <li class="mt-2"><a class="menu_item1" href="index.html#con" style="padding-right: 0px;">Покупай гифты</a></li>
+                        <li><a class="menu_item1" href="index.html#con" style="padding-right: 0px;"><button class="mt-4">Покупай ключи</button></a></li>
+                        <li><a class="menu_item1" href="index.html#con" style="padding-right: 0px;"><button class="mt-4 second_btn_group_main_tovar second_btn_group_main_tovar_fpv" style="color:rgba(123, 42, 24, 1)">Задать вопрос</button></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container headerr d-lg-block d-none">
+            <div class="row">
+                <div class="col-md-2 logo">
+                    <img src="./img/FeatherIcon.png" alt="">
+                    <h3>Логотип</h3>
+                </div>
+                <div class="col-md-2">
+                    <div class="steam">
+                        <img src="./img/money.png" alt="">
+                    <h4>Пополняй Steam</h4>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="steam">
+                        <img src="./img/phone.svg" alt="">
+                    <h4>Мобильные игры</h4>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="steam">
+                        <img src="./img/gift.svg" alt="">
+                    <h4>Покупай гифты</h4>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="steam">
+                        <img src="./img/key.svg" alt="">
+                    <h4>Покупай ключи</h4>
+                    </div>
+                </div>
+                <div class="col-md-2 bonus text_right">
+                    <button>Бонус</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container mt-5">
+            <div class="row">
+                <!-- Левый блок с изображением и описанием -->
+                <div class="col-lg-9 col-md-12 col-12 main">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 col-12">
+                          <img src="./img/metro.png" class="img-fluid" alt="Middle-earth: Shadow of Mordor GOTY Edition" style="height: auto; margin-right: 20px; width: 100%;">  
+                        </div>
+                        <div class="col-lg-8 col-md-12 col-12">
+                          <div>
+                        <h2>Metro Redux Bundle (steam)</h2>
+                        <p>По мотивам всемирно известного цикла романов Дмитрия Глуховского. В комплект Metro Redux входят Metro 2033 Redux и Metro: Last Light Redux. Обе игры были обновлены на новейшем движке 4A Engine и могут похвастаться двумя уникальными стилями игры — спартанским и выживанием, а также легендарным режимом рейнджера.</p>
+                        <div class="col-lg-4 col-4 price d-lg-block d-none">
+                            <h3>299 ₽</h3>
+                            
+                        </div>
+                        <div class="col-lg-4  col-4 price d-lg-block d-none">
+                            <button class="btn btn-primary ml-4">Купить</button>
+                        </div>
+                        <div class="col-lg-4  price d-lg-none d-block">
+                            <button class="btn btn-primary ml-4">Купить за 299 ₽</button>
+                        </div>
+                    </div>  
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Правый блок с информацией о продавце -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="rating" style="border: 1px solid #29A0F5; border-radius: 10px;">
+                        <h3>Продавец:</h3>
+                        <h4>Имя</h4>
+                        <h3>Рейтинг продавца</h3>
+                        <div class="rate">
+                            <img src="./img/stars.png" alt="">
+                            <p>5.0</p>
+                        </div>
+                        <h3>Гарантия сделок:</h3>
+                        <h4>Аттестат продавца</h4>
+                        <h3>Доставка:</h3>
+                        <h4>Моментально на email</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="mt-4 col-12 paying">
+                    <h4>Способы оплаты:</h4>
+                    <img src="./img/visa.svg" alt="Visa" class="mr-2">
+                    <img src="./img/qiwi.png" alt="">
+                    <img src="./img/mastercard.png" alt="Mastercard" class="mr-2">
+                    <img src="./img/paypal.png" alt="Paypal">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec2">
+        <div class="container">
+            <div class="row descc desc">
+                <div class="col-12 mb-4">
+                    <h2>Описание товара</h2>
+                </div>
+                <div class="col-lg-9 col-md-12 col-12">
+                    <div class="seconddesc">
+                        <h3>В 2013 году мир был опустошен апокалиптическим событием, уничтожившим почти все человечество и превратившим поверхность Земли в ядовитую пустошь. Горстка выживших укрылась в глубинах московского подземелья, а человеческая цивилизация вступила в новый Темный век.</h3>
+                        <h3>- Metro Last Light Redux
+                            На дворе 2034 год. Под руинами постапокалиптической Москвы, в туннелях метро остатки человечества окружены смертельными угрозами снаружи и внутри. Мутанты бродят по катакомбам под пустынной поверхностью и охотятся среди отравленного неба над головой.</h3> 
+                            
+                            
+                    </div>
+                </div>
+                <div class="col-lg-3  col-md-12 right">
+                    <div class="mkmk">
+                        <div class="row">
+                            <div class="minimk">
+                                <div class="col-xl-4 col-lg-5">
+                                    <img src="./img/metro.svg" alt="" class="mkcircle">
+                                </div>
+                                <div class="col-xl-8 col-lg-7">
+                                    <h4>Mortal Kombat 11 Ultimate Edition</h4>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12 ">
+                                <h5>299 ₽</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button>КУПИТЬ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom d-lg-block d-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="logotip">
+                        <img src="./img/logo.svg" alt="">
+                        <h2>Логотип</h2>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Пополняй Steam</h3>
+                    <h3>Мобильные игры</h3>
+                    <h3>Покупай гифты</h3>
+                    <h3>Покупай ключи</h3>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Поддержка клиентов</h3>
+                    <h3>Контакты</h3>
+                    <div class="sociallinks">
+                        <img src="./img/sobaka.svg" alt="">
+                        <img src="./img/vk.svg" alt="">
+                        <img src="./img/tg.svg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-2 button_right">
+                    <button>Бонус</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom d-block d-lg-none">
+        <div class="container">
+            <div class="row">
+                <div class="flex">
+                    <div class="col-sm-8 col-8">
+                    
+                        <div class="logotip">
+                            <img src="./img/logo.svg" alt="">
+                            <h2>Логотип</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-4 button_right">
+                        <button>Бонус</button>
+                    </div>   
+                </div>
+                
+                <div class="col-sm-8 col-6">
+                    <h3>Пополняй Steam</h3>
+                    <h3>Мобильные игры</h3>
+                    <h3>Покупай гифты</h3>
+                    <h3>Покупай ключи</h3>
+                </div>
+                <div class="col-sm-4 col-6">
+                    <div class="text_rightt">
+                        <h3>Поддержка клиентов</h3>
+                    <h3>Контакты</h3>
+                    <div class="sociallinks">
+                        <img src="./img/sobaka.svg" alt="">
+                        <img src="./img/vk.svg" alt="">
+                        <img src="./img/tg.svg" alt="">
+                    </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script>
+    window.addEventListener('resize', function() {
+const containers = document.querySelectorAll('.container');
+if (window.innerWidth < 992) {
+    containers.forEach(container => {
+        container.classList.remove('container');
+        container.classList.add('container-fluid');
+        container.classList.add('mdpixels');
+    });
+} else {
+    containers.forEach(container => {
+        container.classList.remove('container-fluid');
+        container.classList.add('container');
+    });
+}
+});
+
+// Выполнить проверку при загрузке страницы
+window.dispatchEvent(new Event('resize'));
+
+</script>
+</body>
+</html>

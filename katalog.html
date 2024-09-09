@@ -507,7 +507,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row two d-none">
+                    <div class="row two">
                         <div class="row forcarusel2">
                             <h2>Новинки</h2>
                             <div class="carusel">
@@ -676,7 +676,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row three d-none">
+                    <div class="row three">
                         <div class="row forcarusel3">
                             <h2>Популярное</h2>
                             <div class="carusel">
@@ -934,28 +934,44 @@
         // Выполнить проверку при загрузке страницы
         window.dispatchEvent(new Event('resize'));
     </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             let novinki = document.querySelector('.novinki');
             let alltovars = document.querySelector('.alltovars');
             let popularity = document.querySelector('.popularity');
+            let one = document.querySelector('.one');
+            let two = document.querySelector('.two');
+            let three = document.querySelector('.three');
+
             novinki.addEventListener('click', function () {
-                novinki.classList.add('light')
-                alltovars.classList.remove('light')
-                popularity.classList.remove('light')
-            })
+                novinki.classList.add('light');
+                alltovars.classList.remove('light');
+                popularity.classList.remove('light');
+                one.classList.remove('d-none');
+                two.classList.add('d-none');
+                three.classList.add('d-none');
+            });
+
             alltovars.addEventListener('click', function () {
-                alltovars.classList.add('light')
-                novinki.classList.remove('light')
-                popularity.classList.remove('light')
-            })
+                alltovars.classList.add('light');
+                novinki.classList.remove('light');
+                popularity.classList.remove('light');
+                one.classList.add('d-none');
+                two.classList.remove('d-none');
+                three.classList.add('d-none');
+            });
+
             popularity.addEventListener('click', function () {
-                popularity.classList.add('light')
-                alltovars.classList.remove('light')
-                novinki.classList.remove('light')
-            })
-        })
-    </script>
+                popularity.classList.add('light');
+                novinki.classList.remove('light');
+                alltovars.classList.remove('light');
+                one.classList.add('d-none');
+                two.classList.add('d-none');
+                three.classList.remove('d-none');
+            });
+        });
+        </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Получаем все элементы с классом 'vsetovari'

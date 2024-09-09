@@ -914,6 +914,9 @@
             </div>
         </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/script.js"></script>
     <script>
         window.addEventListener('resize', function () {
             const containers = document.querySelectorAll('.container');
@@ -935,43 +938,7 @@
         window.dispatchEvent(new Event('resize'));
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let novinki = document.querySelector('.novinki');
-            let alltovars = document.querySelector('.alltovars');
-            let popularity = document.querySelector('.popularity');
-            let one = document.querySelector('.one');
-            let two = document.querySelector('.two');
-            let three = document.querySelector('.three');
 
-            novinki.addEventListener('click', function () {
-                novinki.classList.add('light');
-                alltovars.classList.remove('light');
-                popularity.classList.remove('light');
-                one.classList.remove('d-none');
-                two.classList.add('d-none');
-                three.classList.add('d-none');
-            });
-
-            alltovars.addEventListener('click', function () {
-                alltovars.classList.add('light');
-                novinki.classList.remove('light');
-                popularity.classList.remove('light');
-                one.classList.add('d-none');
-                two.classList.remove('d-none');
-                three.classList.add('d-none');
-            });
-
-            popularity.addEventListener('click', function () {
-                popularity.classList.add('light');
-                novinki.classList.remove('light');
-                alltovars.classList.remove('light');
-                one.classList.add('d-none');
-                two.classList.add('d-none');
-                three.classList.remove('d-none');
-            });
-        });
-        </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Получаем все элементы с классом 'vsetovari'
@@ -1010,13 +977,114 @@
         });
     </script>
     <script>
-        
+        document.addEventListener('DOMContentLoaded', function () {
+            let novinki = document.querySelector('.novinki');
+            let alltovars = document.querySelector('.alltovars');
+            let popularity = document.querySelector('.popularity');
+            let one = document.querySelector('.one');
+            let two = document.querySelector('.two');
+            let three = document.querySelector('.three');
+    
+            // Изначально скрываем элементы two и three
+            two.classList.add('d-none');
+            three.classList.add('d-none');
+    
+            function updateCarousel() {
+                $('.carusel').slick({
+                    arrows:true,
+                    dots: true,
+                    adaptiveHeight:true,
+                    slidesToShow: 3,
+                    speed:800,
+                    autoplay:false,
+                    autoPlaySpeed:5000,
+                    draggable:false,
+                    swipe:false,
+                    responsive:[
+                        {
+                            breakpoint:768,
+                            settings: {
+                            slidesToShow: 2,
+                        }
+                        }
+                        
+                    ]
+                });
+            }
+    
+            novinki.addEventListener('click', function () {
+                novinki.classList.add('light');
+                alltovars.classList.remove('light');
+                popularity.classList.remove('light');
+                one.classList.remove('d-none');
+                two.classList.add('d-none');
+                three.classList.add('d-none');
+                updateCarousel();
+            });
+    
+            alltovars.addEventListener('click', function () {
+                alltovars.classList.add('light');
+                novinki.classList.remove('light');
+                popularity.classList.remove('light');
+                one.classList.add('d-none');
+                two.classList.remove('d-none');
+                three.classList.add('d-none');
+                updateCarousel();
+            });
+    
+            popularity.addEventListener('click', function () {
+                popularity.classList.add('light');
+                novinki.classList.remove('light');
+                alltovars.classList.remove('light');
+                one.classList.add('d-none');
+                two.classList.add('d-none');
+                three.classList.remove('d-none');
+                updateCarousel();
+            });
+        });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Функция для переключения состояния details
+            function toggleDetails(button, details) {
+                let areOpen = Array.from(details).every(detail => detail
+                .open); // Проверка открыты ли все details
+                details.forEach(detail => detail.open = !areOpen); // Открыть или закрыть все details
+
+                // Изменение текста кнопки в зависимости от состояния
+                button.textContent = areOpen ? "Показать Фильтр" : "Скрыть Фильтры";
+            }
+
+            // Поиск первой и второй кнопок и всех details
+            const buttons = document.querySelectorAll("#filter");
+            const detailsElements = document.querySelectorAll(".firstdetail");
+            const detailsElements2 = document.querySelectorAll(".firstdetail2");
+
+            // Добавление события для первой кнопки
+            buttons[0].addEventListener("click", function () {
+                toggleDetails(buttons[0], detailsElements);
+            });
+
+            // Добавление события для второй кнопки
+            buttons[1].addEventListener("click", function () {
+                toggleDetails(buttons[1], detailsElements2);
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.querySelector('.slider');
+            const fromH5 = document.querySelector('.eto');
+
+            slider.addEventListener('input', function () {
+                fromH5.textContent = slider.value;
+            });
+        });
+    </script>
+
     
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="./js/slick.min.js"></script>
-    <script src="./js/script.js"></script>
+    
 </body>
 
 </html>

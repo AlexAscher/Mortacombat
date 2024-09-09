@@ -388,6 +388,16 @@ margin-left: 40px;
         margin-left: 20px;
     }
 }
+.styleh2{
+    font-family: TT Travels Trl;
+font-size: 32px;
+font-weight: 600;
+line-height: 24px;
+text-align: left;
+color: white;
+margin-bottom: 40px;
+margin-left: 40px;
+}
 .price{
     border: 3px solid #36EBCF;
     padding: 40px 30px 40px 30px;
@@ -713,7 +723,7 @@ border: 3px solid #36EBCF;
         gap: 15px;
         justify-content: center;
         margin-top: 40px;
-        
+        margin-bottom: 120px;
     }
     .logotip{
         display: flex;

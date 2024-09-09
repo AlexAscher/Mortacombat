@@ -339,7 +339,8 @@
                 </div>
 
                 <div class="col-lg-9">
-                    <div class="row forcarusel">
+                    <div class="row forcarusel0">
+                        <div class="row forcarusel">
                         <h2 class="d-block d-lg-none">Лидеры продаж</h2>
                         <div class="carusel">
                             <div class="col-md-4 col-6 goods1" onclick="window.location.href='mortalkombat11.html';"> 
@@ -392,8 +393,10 @@
                             <img src="./img/3.svg" alt="">
                             <img src="./img/4.svg" alt="">
                         </div>
-                        <h2>Новинки</h2>
+                    </div>
+                        
                         <div class="row forcarusel2">
+                            <h2>Новинки</h2>
                             <div class="carusel">
                                 <div class=" col-md-4  col-6 goods" onclick="window.location.href='dishonored.html';">
                                     <div class="carusel_item">
@@ -448,8 +451,9 @@
                                 <img src="./img/4.svg" alt="">
                             </div>
                         </div>
-                        <h2>Популярное</h2>
+                        
                         <div class="row forcarusel3">
+                            <h2>Популярное</h2>
                             <div class="carusel">
                                 <div class=" col-md-4  col-6 goods" onclick="window.location.href='doom.html';">
                                     <div class="carusel_item">
@@ -688,6 +692,27 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const novinki = document.querySelector('.novinki');
+            const alltovars = document.querySelector('.alltovars');
+            const popularity = document.querySelector('.popularity');
+            const forcarusel = document.querySelector('.forcarusel');
+            const forcarusel1 = document.querySelector('.forcarusel1');
+            const forcarusel2 = document.querySelector('.forcarusel2');
+        
+            if (novinki && novinki.classList.contains('light')) {
+                forcarusel.parentNode.insertBefore(forcarusel, forcarusel1);
+                forcarusel.parentNode.insertBefore(forcarusel, forcarusel2);
+            } else if (alltovars && alltovars.classList.contains('light')) {
+                forcarusel1.parentNode.insertBefore(forcarusel1, forcarusel);
+                forcarusel1.parentNode.insertBefore(forcarusel1, forcarusel2);
+            } else if (popularity && popularity.classList.contains('light')) {
+                forcarusel2.parentNode.insertBefore(forcarusel2, forcarusel);
+                forcarusel2.parentNode.insertBefore(forcarusel2, forcarusel1);
+            }
+        });
+        </script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="./js/slick.min.js"></script>
     <script src="./js/script.js"></script>

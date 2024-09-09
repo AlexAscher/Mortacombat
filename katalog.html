@@ -342,6 +342,7 @@
                     <div class="row one">
                         <div class="row forcarusel">
                         <h2 class="d-block d-lg-none">Лидеры продаж</h2>
+                        
                         <div class="carusel">
                             <div class="col-md-4 col-6 goods1" onclick="window.location.href='mortalkombat11.html';"> 
                                 <div class="carusel_item">
@@ -509,7 +510,7 @@
                     </div>
                     <div class="row two">
                         <div class="row forcarusel2">
-                            <h2>Новинки</h2>
+                            <h2 class="twonew">Новинки</h2>
                             <div class="carusel">
                                 <div class=" col-md-4  col-6 goods" onclick="window.location.href='dishonored.html';">
                                     <div class="carusel_item">
@@ -567,6 +568,7 @@
                         
                         <div class="row forcarusel">
                         <h2 class="d-block d-lg-none">Лидеры продаж</h2>
+                        <h2 class="forvkladki"></h2>
                         <div class="carusel">
                             <div class="col-md-4 col-6 goods1" onclick="window.location.href='mortalkombat11.html';"> 
                                 <div class="carusel_item">
@@ -678,7 +680,7 @@
                     </div>
                     <div class="row three">
                         <div class="row forcarusel3">
-                            <h2>Популярное</h2>
+                            <h2 class="threepop">Популярное</h2>
                             <div class="carusel">
                                 <div class=" col-md-4  col-6 goods" onclick="window.location.href='doom.html';">
                                     <div class="carusel_item">
@@ -733,6 +735,7 @@
                         </div>
                         <div class="row forcarusel">
                         <h2 class="d-block d-lg-none">Лидеры продаж</h2>
+                        <h2 class="forvkladki"></h2>
                         <div class="carusel">
                             <div class="col-md-4 col-6 goods1" onclick="window.location.href='mortalkombat11.html';"> 
                                 <div class="carusel_item">
@@ -979,6 +982,7 @@
         let one = document.querySelector('.one');
         let two = document.querySelector('.two');
         let three = document.querySelector('.three');
+        let shopHeader = document.querySelector('.shop h2');
 
         // Изначально скрываем элементы two и three
         two.classList.add('d-none');
@@ -1014,6 +1018,7 @@
             one.classList.remove('d-none');
             two.classList.add('d-none');
             three.classList.add('d-none');
+            shopHeader.textContent = 'Лидеры продаж';
             updateCarousel();
         });
 
@@ -1024,6 +1029,7 @@
             one.classList.add('d-none');
             two.classList.remove('d-none');
             three.classList.add('d-none');
+            shopHeader.textContent = 'Новинки';
             updateCarousel();
         });
 
@@ -1034,6 +1040,7 @@
             one.classList.add('d-none');
             two.classList.add('d-none');
             three.classList.remove('d-none');
+            shopHeader.textContent = 'Популярное';
             updateCarousel();
         });
 

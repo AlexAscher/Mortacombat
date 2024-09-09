@@ -584,9 +584,6 @@ border: 3px solid #36EBCF;
     padding-right: 10px;
     padding-left: 10px;
 }
-.slick-slider{
-
-}
 .slick-list{
     overflow: hidden;
 }
@@ -658,7 +655,7 @@ border: 3px solid #36EBCF;
     border: 1px solid white;
 }
 .tovari{
-    
+    cursor: pointer;
     padding: 25px;
     gap: 8px;
     border-radius: 15px;

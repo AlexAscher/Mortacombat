@@ -419,7 +419,7 @@ font-weight: 400;
 line-height: 24px;
 text-align: left;
 color: #E8E8E8;
-margin-bottom: 10%;
+margin-bottom: 5%;
 }
 .desc h3:nth-of-type(3){
     margin-bottom: 0;
@@ -514,6 +514,12 @@ color: white;
 }
 .mkmk h5{
     margin-top: 25px;
+}
+@media(max-width:992px){
+    .mkmk h4{
+        font-size: 20px;
+        line-height: 20px;
+    }
 }
 .logotip{
     display: flex;

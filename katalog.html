@@ -568,7 +568,7 @@
                         
                         <div class="row forcarusel">
                         <h2 class="d-block d-lg-none">Лидеры продаж</h2>
-                        <h2 class="forvkladki"></h2>
+                        <h2 class="forvkladki d-none d-lg-block">Лидеры продаж</h2>
                         <div class="carusel">
                             <div class="col-md-4 col-6 goods1" onclick="window.location.href='mortalkombat11.html';"> 
                                 <div class="carusel_item">
@@ -983,10 +983,10 @@
         let two = document.querySelector('.two');
         let three = document.querySelector('.three');
         let shopHeader = document.querySelector('.shop h2');
-
-        // Изначально скрываем элементы two и three
-        two.classList.add('d-none');
-        three.classList.add('d-none');
+        let forcarusel2Header = document.querySelector('.forcarusel2 h2');
+        let forcarusel3Header = document.querySelector('.forcarusel3 h2');
+        let twonew = document.querySelector('.twonew');
+        let threepop = document.querySelector('.threepop');
 
         function updateCarousel() {
             $('.carusel').slick('unslick'); // Удаляем предыдущую инициализацию
@@ -1011,38 +1011,45 @@
             });
         }
 
-        novinki.addEventListener('click', function () {
-            novinki.classList.add('light');
+        function handleTabClick(tab, showOne, showTwo, showThree, headerText, showForcarusel2, showForcarusel3, showTwonew, showThreepop) {
+            novinki.classList.remove('light');
             alltovars.classList.remove('light');
             popularity.classList.remove('light');
-            one.classList.remove('d-none');
-            two.classList.add('d-none');
-            three.classList.add('d-none');
-            shopHeader.textContent = 'Лидеры продаж';
+            tab.classList.add('light');
+
+            one.classList.toggle('d-none', !showOne);
+            two.classList.toggle('d-none', !showTwo);
+            three.classList.toggle('d-none', !showThree);
+
+            shopHeader.textContent = headerText;
+
+            if (window.innerWidth > 992) {
+                forcarusel2Header.style.display = showForcarusel2 ? 'block' : 'none';
+                forcarusel3Header.style.display = showForcarusel3 ? 'block' : 'none';
+                twonew.style.display = showTwonew ? 'block' : 'none';
+                threepop.style.display = showThreepop ? 'block' : 'none';
+            }
+
             updateCarousel();
+        }
+
+        novinki.addEventListener('click', function () {
+            handleTabClick(novinki, true, false, false, 'Новинки', true, true, true, true);
         });
 
         alltovars.addEventListener('click', function () {
-            alltovars.classList.add('light');
-            novinki.classList.remove('light');
-            popularity.classList.remove('light');
-            one.classList.add('d-none');
-            two.classList.remove('d-none');
-            three.classList.add('d-none');
-            shopHeader.textContent = 'Новинки';
-            updateCarousel();
+            handleTabClick(alltovars, false, true, false, 'Все товары', false, false, false, true);
         });
 
         popularity.addEventListener('click', function () {
-            popularity.classList.add('light');
-            novinki.classList.remove('light');
-            alltovars.classList.remove('light');
-            one.classList.add('d-none');
-            two.classList.add('d-none');
-            three.classList.remove('d-none');
-            shopHeader.textContent = 'Популярное';
-            updateCarousel();
+            handleTabClick(popularity, false, false, true, 'Популярные', true, true, true, false);
         });
+
+        // Изначально скрываем элементы two и three
+        if (window.innerWidth > 992) {
+            two.classList.add('d-none');
+            three.classList.add('d-none');
+        }
 
         // Инициализируем карусель при загрузке страницы
         updateCarousel();

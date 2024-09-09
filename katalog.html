@@ -915,172 +915,165 @@
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="./js/slick.min.js"></script>
-    <script src="./js/script.js"></script>
-    <script>
-        window.addEventListener('resize', function () {
-            const containers = document.querySelectorAll('.container');
-            if (window.innerWidth < 992) {
-                containers.forEach(container => {
-                    container.classList.remove('container');
-                    container.classList.add('container-fluid');
-                    container.classList.add('mdpixels');
-                });
-            } else {
-                containers.forEach(container => {
-                    container.classList.remove('container-fluid');
-                    container.classList.add('container');
-                });
-            }
-        });
-
-        // Выполнить проверку при загрузке страницы
-        window.dispatchEvent(new Event('resize'));
-    </script>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Получаем все элементы с классом 'vsetovari'
-            const elements = document.querySelectorAll('.vsetovari');
-            const tovari = document.querySelectorAll('.tovari');
-            // Инициализируем переменную для хранения максимальной высоты
-            let maxHeight = 0;
-            let maxHeighttovari = 0;
-            if (window.innerWidth > 768) {
-                elements.forEach(element => {
-                    const elementHeight = element.offsetHeight;
-                    if (elementHeight > maxHeight) {
-                        maxHeight = elementHeight;
-                    }
-                });
-
-                // Устанавливаем максимальную высоту для всех элементов
-                elements.forEach(element => {
-                    element.style.height = `${maxHeight}px`;
-                });
-            }
-            // Проходим по всем элементам и находим максимальную высоту
-
-
-            tovari.forEach(element => {
-                const tovariHeight = element.offsetHeight;
-                if (tovariHeight > maxHeighttovari) {
-                    maxHeighttovari = tovariHeight;
-                }
-
+<script src="./js/slick.min.js"></script>
+<script src="./js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="./js/slick.min.js"></script>
+<script src="./js/script.js"></script>
+<script>
+    window.addEventListener('resize', function () {
+        const containers = document.querySelectorAll('.container');
+        if (window.innerWidth < 992) {
+            containers.forEach(container => {
+                container.classList.remove('container');
+                container.classList.add('container-fluid');
+                container.classList.add('mdpixels');
             });
-            maxHeighttovari = maxHeighttovari + 30;
-            tovari.forEach(element => {
-                element.style.height = `${maxHeighttovari}px`;
-            })
+        } else {
+            containers.forEach(container => {
+                container.classList.remove('container-fluid');
+                container.classList.add('container');
+            });
+        }
+    });
+
+    // Выполнить проверку при загрузке страницы
+    window.dispatchEvent(new Event('resize'));
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const elements = document.querySelectorAll('.vsetovari');
+        const tovari = document.querySelectorAll('.tovari');
+        let maxHeight = 0;
+        let maxHeighttovari = 0;
+        if (window.innerWidth > 768) {
+            elements.forEach(element => {
+                const elementHeight = element.offsetHeight;
+                if (elementHeight > maxHeight) {
+                    maxHeight = elementHeight;
+                }
+            });
+            elements.forEach(element => {
+                element.style.height = `${maxHeight}px`;
+            });
+        }
+        tovari.forEach(element => {
+            const tovariHeight = element.offsetHeight;
+            if (tovariHeight > maxHeighttovari) {
+                maxHeighttovari = tovariHeight;
+            }
         });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let novinki = document.querySelector('.novinki');
-            let alltovars = document.querySelector('.alltovars');
-            let popularity = document.querySelector('.popularity');
-            let one = document.querySelector('.one');
-            let two = document.querySelector('.two');
-            let three = document.querySelector('.three');
-    
-            // Изначально скрываем элементы two и three
-            two.classList.add('d-none');
-            three.classList.add('d-none');
-    
-            function updateCarousel() {
-                $('.carusel').slick({
-                    arrows:true,
-                    dots: true,
-                    adaptiveHeight:true,
-                    slidesToShow: 3,
-                    speed:800,
-                    autoplay:false,
-                    autoPlaySpeed:5000,
-                    draggable:false,
-                    swipe:false,
-                    responsive:[
-                        {
-                            breakpoint:768,
-                            settings: {
+        maxHeighttovari = maxHeighttovari + 30;
+        tovari.forEach(element => {
+            element.style.height = `${maxHeighttovari}px`;
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let novinki = document.querySelector('.novinki');
+        let alltovars = document.querySelector('.alltovars');
+        let popularity = document.querySelector('.popularity');
+        let one = document.querySelector('.one');
+        let two = document.querySelector('.two');
+        let three = document.querySelector('.three');
+
+        // Изначально скрываем элементы two и three
+        two.classList.add('d-none');
+        three.classList.add('d-none');
+
+        function updateCarousel() {
+            $('.carusel').slick('unslick'); // Удаляем предыдущую инициализацию
+            $('.carusel').slick({
+                arrows: true,
+                dots: true,
+                adaptiveHeight: true,
+                slidesToShow: 3,
+                speed: 800,
+                autoplay: false,
+                autoPlaySpeed: 5000,
+                draggable: false,
+                swipe: false,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
                             slidesToShow: 2,
                         }
-                        }
-                        
-                    ]
-                });
-            }
-    
-            novinki.addEventListener('click', function () {
-                novinki.classList.add('light');
-                alltovars.classList.remove('light');
-                popularity.classList.remove('light');
-                one.classList.remove('d-none');
-                two.classList.add('d-none');
-                three.classList.add('d-none');
-                updateCarousel();
+                    }
+                ]
             });
-    
-            alltovars.addEventListener('click', function () {
-                alltovars.classList.add('light');
-                novinki.classList.remove('light');
-                popularity.classList.remove('light');
-                one.classList.add('d-none');
-                two.classList.remove('d-none');
-                three.classList.add('d-none');
-                updateCarousel();
-            });
-    
-            popularity.addEventListener('click', function () {
-                popularity.classList.add('light');
-                novinki.classList.remove('light');
-                alltovars.classList.remove('light');
-                one.classList.add('d-none');
-                two.classList.add('d-none');
-                three.classList.remove('d-none');
-                updateCarousel();
-            });
+        }
+
+        novinki.addEventListener('click', function () {
+            novinki.classList.add('light');
+            alltovars.classList.remove('light');
+            popularity.classList.remove('light');
+            one.classList.remove('d-none');
+            two.classList.add('d-none');
+            three.classList.add('d-none');
+            updateCarousel();
         });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Функция для переключения состояния details
-            function toggleDetails(button, details) {
-                let areOpen = Array.from(details).every(detail => detail
-                .open); // Проверка открыты ли все details
-                details.forEach(detail => detail.open = !areOpen); // Открыть или закрыть все details
 
-                // Изменение текста кнопки в зависимости от состояния
-                button.textContent = areOpen ? "Показать Фильтр" : "Скрыть Фильтры";
-            }
-
-            // Поиск первой и второй кнопок и всех details
-            const buttons = document.querySelectorAll("#filter");
-            const detailsElements = document.querySelectorAll(".firstdetail");
-            const detailsElements2 = document.querySelectorAll(".firstdetail2");
-
-            // Добавление события для первой кнопки
-            buttons[0].addEventListener("click", function () {
-                toggleDetails(buttons[0], detailsElements);
-            });
-
-            // Добавление события для второй кнопки
-            buttons[1].addEventListener("click", function () {
-                toggleDetails(buttons[1], detailsElements2);
-            });
+        alltovars.addEventListener('click', function () {
+            alltovars.classList.add('light');
+            novinki.classList.remove('light');
+            popularity.classList.remove('light');
+            one.classList.add('d-none');
+            two.classList.remove('d-none');
+            three.classList.add('d-none');
+            updateCarousel();
         });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const slider = document.querySelector('.slider');
-            const fromH5 = document.querySelector('.eto');
 
-            slider.addEventListener('input', function () {
-                fromH5.textContent = slider.value;
-            });
+        popularity.addEventListener('click', function () {
+            popularity.classList.add('light');
+            novinki.classList.remove('light');
+            alltovars.classList.remove('light');
+            one.classList.add('d-none');
+            two.classList.add('d-none');
+            three.classList.remove('d-none');
+            updateCarousel();
         });
-    </script>
+
+        // Инициализируем карусель при загрузке страницы
+        updateCarousel();
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function toggleDetails(button, details) {
+            let areOpen = Array.from(details).every(detail => detail.open);
+            details.forEach(detail => detail.open = !areOpen);
+            button.textContent = areOpen ? "Показать Фильтр" : "Скрыть Фильтры";
+        }
+
+        const buttons = document.querySelectorAll("#filter");
+        const detailsElements = document.querySelectorAll(".firstdetail");
+        const detailsElements2 = document.querySelectorAll(".firstdetail2");
+
+        buttons[0].addEventListener("click", function () {
+            toggleDetails(buttons[0], detailsElements);
+        });
+
+        buttons[1].addEventListener("click", function () {
+            toggleDetails(buttons[1], detailsElements2);
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const slider = document.querySelector('.slider');
+        const fromH5 = document.querySelector('.eto');
+
+        slider.addEventListener('input', function () {
+            fromH5.textContent = slider.value;
+        });
+    });
+</script>
 
     
 

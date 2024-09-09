@@ -957,34 +957,6 @@
         })
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let novinki = document.querySelector('.novinki');
-            let alltovars = document.querySelector('.alltovars');
-            let popularity = document.querySelector('.popularity');
-            let one = document.querySelector('.one');
-            let two = document.querySelector('.two');
-            let three = document.querySelector('.three');
-            if(novinki.classList.contains('light')){
-                one.classList.add('d-block');
-                one.classList.remove('d-none');
-                two.classList.add('d-none');
-                three.classList.add('d-none');
-            }
-            if(alltovars.classList.contains('light')){
-                two.classList.add('d-block');
-                two.classList.remove('d-none');
-                one.classList.add('d-none');
-                three.classList.add('d-none');
-            }
-            if(popularity.classList.contains('light')){
-                three.classList.add('d-block');
-                three.classList.remove('d-none');
-                one.classList.add('d-none');
-                two.classList.add('d-none');
-            }
-        })
-    </script>
-    <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Получаем все элементы с классом 'vsetovari'
             const elements = document.querySelectorAll('.vsetovari');

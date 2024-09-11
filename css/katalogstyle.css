@@ -43,22 +43,9 @@ body {
     /* Можно указать normal или bold */
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
 
-    100% {
-        opacity: 1;
-    }
-}
 
 header {
-    opacity: 0;
-    /* Скрываем элемент до начала анимации */
-    animation: fadeIn 0.5s ease-out forwards;
-    animation-delay: 0s;
-    /* Тайминг совпадает с .novinki */
     z-index: 20;
     position: relative;
 }
@@ -394,37 +381,19 @@ details li {
 
 }
 
-@keyframes slideInFromTop {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
 
 .novinki {
     border-top: 5px solid #3760E3;
     border-bottom: 5px solid #3760E3;
     border-left: 5px solid #3760E3;
     border-radius: 15px 0px 0px 15px;
-    opacity: 0;
-    /* Скрываем элемент до начала анимации */
-    animation: slideInFromTop 0.5s ease-out forwards;
-    animation-delay: 0s;
+
 }
 
 .alltovars {
     border-top: 5px solid #3760E3;
     border-bottom: 5px solid #3760E3;
     border-radius: 0px;
-    opacity: 0;
-    /* Скрываем элемент до начала анимации */
-    animation: slideInFromTop 0.5s ease-out forwards;
-    animation-delay: 0.5s;
 }
 
 .popularity {
@@ -432,10 +401,6 @@ details li {
     border-bottom: 5px solid #3760E3;
     border-right: 5px solid #3760E3;
     border-radius: 0px 15px 15px 0px;
-    opacity: 0;
-    /* Скрываем элемент до начала анимации */
-    animation: slideInFromTop 0.5s ease-out forwards;
-    animation-delay: 1s;
 }
 
 .maincontainer {

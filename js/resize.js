@@ -14,5 +14,4 @@ window.addEventListener('resize', function () {
     }
 });
 
-// Выполнить проверку при загрузке страницы
 window.dispatchEvent(new Event('resize'));

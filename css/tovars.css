@@ -1,103 +1,124 @@
-body{
+body {
     background-color: rgba(14, 13, 18, 1);
     overflow-x: hidden;
 }
-.mdpixels{
+
+.mdpixels {
     padding-left: 60px;
     padding-right: 60px;
 }
-.shapkamini{
+
+.shapkamini {
     padding-right: 60px;
     padding-left: 60px;
 }
-@media(max-width:568px){
-    .shapkamini{
+
+@media(max-width:568px) {
+    .shapkamini {
         padding-right: 20px;
         padding-left: 20px;
     }
 }
-@media(max-width:568px){
-    .mdpixels{
+
+@media(max-width:568px) {
+    .mdpixels {
         padding-right: 20px;
         padding-left: 20px;
     }
-    
-}
-@font-face {
-    font-family: 'TT Travels Trl';
-    src: url('../fonts/TTTravelsTrial_Light.otf'); /* Путь к шрифту и его формат */
-    font-weight: 300; /* Можно указать normal или bold */
+
 }
 
 @font-face {
     font-family: 'TT Travels Trl';
-    src: url('../fonts/TTTravelsTrial_Regular.otf'); /* Путь к шрифту и его формат */
-    font-weight: 400; /* Можно указать normal или bold */
+    src: url('../fonts/TTTravelsTrial_Light.otf');
+    /* Путь к шрифту и его формат */
+    font-weight: 300;
+    /* Можно указать normal или bold */
 }
 
 @font-face {
     font-family: 'TT Travels Trl';
-    src: url('../fonts/TTTravelsTrial_Medium.otf'); /* Путь к шрифту и его формат */
-    font-weight: 500; /* Можно указать normal или bold */
+    src: url('../fonts/TTTravelsTrial_Regular.otf');
+    /* Путь к шрифту и его формат */
+    font-weight: 400;
+    /* Можно указать normal или bold */
 }
 
 @font-face {
     font-family: 'TT Travels Trl';
-    src: url('../fonts/TTTravelsTrial_Bold.otf'); /* Путь к шрифту и его формат */
-    font-weight: 600; /* Можно указать normal или bold */
+    src: url('../fonts/TTTravelsTrial_Medium.otf');
+    /* Путь к шрифту и его формат */
+    font-weight: 500;
+    /* Можно указать normal или bold */
 }
 
 @font-face {
     font-family: 'TT Travels Trl';
-    src: url('../fonts/TTTravelsTrial_ExtraBold.otf'); /* Путь к шрифту и его формат */
-    font-weight: 700; /* Можно указать normal или bold */
+    src: url('../fonts/TTTravelsTrial_Bold.otf');
+    /* Путь к шрифту и его формат */
+    font-weight: 600;
+    /* Можно указать normal или bold */
+}
+
+@font-face {
+    font-family: 'TT Travels Trl';
+    src: url('../fonts/TTTravelsTrial_ExtraBold.otf');
+    /* Путь к шрифту и его формат */
+    font-weight: 700;
+    /* Можно указать normal или bold */
 }
 
 #menu__toggle {
-  opacity: 0;
+    opacity: 0;
 }
 
-#menu__toggle:checked ~ .menu__btn > span {
-  transform: rotate(45deg);
-  width: 30px;
-}
-#menu__toggle:checked ~ .menu__btn > span::before {
-  top: 0;
-  right: 0; 
-  transform: rotate(0);
-  width: 30px;
-}
-#menu__toggle:checked ~ .menu__btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
-  right: 0;
-  width: 30px;
+#menu__toggle:checked~.menu__btn>span {
+    transform: rotate(45deg);
+    width: 30px;
 }
 
-#menu__toggle:checked ~ .menu__btn{
+#menu__toggle:checked~.menu__btn>span::before {
+    top: 0;
+    right: 0;
+    transform: rotate(0);
+    width: 30px;
+}
+
+#menu__toggle:checked~.menu__btn>span::after {
+    top: 0;
+    transform: rotate(90deg);
+    right: 0;
+    width: 30px;
+}
+
+#menu__toggle:checked~.menu__btn {
     width: 50px;
 }
+
 .hamburger-menu {
-    position: relative; /* Изменяем позиционирование на relative, чтобы оно реагировало на сетку Bootstrap */
+    position: relative;
+    /* Изменяем позиционирование на relative, чтобы оно реагировало на сетку Bootstrap */
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-@media(min-width:768px) and (max-width:992px){
-    .hamburger-menu{
+
+@media(min-width:768px) and (max-width:992px) {
+    .hamburger-menu {
         margin-bottom: 6px;
     }
 }
-#menu__toggle:checked ~ .menu__box {
-  visibility: visible;
-  right: 0;
-  background: #fff;
-color: white;
-text-align: center;
+
+#menu__toggle:checked~.menu__box {
+    visibility: visible;
+    right: 0;
+    background: #fff;
+    color: white;
+    text-align: center;
 }
 
 .menu__btn {
-      display: flex;
+    display: flex;
     align-items: center;
     position: absolute;
     top: 5px;
@@ -109,54 +130,57 @@ text-align: center;
     border-radius: 10px;
 }
 
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
-      display: block;
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+    display: block;
     position: absolute;
     width: 34px;
     height: 2px;
     background: linear-gradient(0deg, #ECCB66, #ECCB66), linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
     transition-duration: .25s;
 }
-.menu__btn > span::before {
-  content: '';
-  top: -8px;
+
+.menu__btn>span::before {
+    content: '';
+    top: -8px;
 }
-.menu__btn > span::after {
-  content: '';
-  top: 8px;
+
+.menu__btn>span::after {
+    content: '';
+    top: 8px;
 }
 
 .menu__box {
-  display: block;
-  position: fixed;
-  visibility: hidden;
-  top: 0;
-  right: -100%;
-  z-index: 10;
-  width: 200px;
-  height: 100%;
-  margin: 0;
-  padding: 80px 0;
-  list-style: none;
-  background-color: #fff;
-  transition-duration: .25s;
-  box-shadow: 1px 0px 6px rgb(123, 42, 24);
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 200px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #fff;
+    transition-duration: .25s;
+    box-shadow: 1px 0px 6px rgb(123, 42, 24);
 }
-.menu_item1{
+
+.menu_item1 {
     color: black;
     text-decoration: none;
     line-height: 30px;
     font-size: 18px;
 }
 
-.menu_item1:hover{
+.menu_item1:hover {
     color: black;
     text-decoration: none;
 }
 
-.menu__box button{
+.menu__box button {
     width: 80%;
     border: none;
     color: white;
@@ -174,54 +198,63 @@ text-align: center;
     padding-bottom: 15px;
 }
 
-.text_right{
+.text_right {
     text-align: right;
     align-self: center;
 }
-.text_center{
+
+.text_center {
     text-align: center;
 }
-@media(max-width:992px){
-    .dlyamt{
+
+@media(max-width:992px) {
+    .dlyamt {
         margin-top: 23px;
     }
 }
-@media(max-width:767px){
-    .menu__btn{
+
+@media(max-width:767px) {
+    .menu__btn {
         top: 13px;
     }
 }
-@media(max-width:576px){
-    .bonusik{
+
+@media(max-width:576px) {
+    .bonusik {
         text-align: end;
     }
 }
-.headerr{
+
+.headerr {
     padding-top: 40px;
 }
-.logo h3{
+
+.logo h3 {
     font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 700;
-line-height: 24px;
-text-align: left;
-color: white; 
-margin-left: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    color: white;
+    margin-left: 10px;
 }
-.logo{
+
+.logo {
     display: flex;
     align-items: center;
 }
-.steam h4{
+
+.steam h4 {
     font-family: TT Travels Trl;
-font-size: 15px;
-font-weight: 500;
-line-height: 19.2px;
-text-align: left;
-color: white;
-margin-left: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 19.2px;
+    text-align: left;
+    color: white;
+    margin-left: 10px;
 }
-.steam{
+
+.steam {
     display: flex;
     align-items: center;
     border: 1px solid var(--White, #FFFFFF);
@@ -231,31 +264,34 @@ margin-left: 10px;
     padding: 10px 10px 10px 10px;
     max-width: 100%;
 }
-.bonus button{
+
+.bonus button {
     font-family: TT Travels Trl;
-font-size: 14px;
-font-weight: 700;
-line-height: 20px;
-text-align: center;
-color: #0E0D12;
-background:linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
-padding: 12px 40px 12px 40px;
-border: none;
-border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    color: #0E0D12;
+    background: linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+    padding: 12px 40px 12px 40px;
+    border: none;
+    border-radius: 8px;
 }
-.shapkamini button{
+
+.shapkamini button {
     font-family: TT Travels Trl;
-font-size: 14px;
-font-weight: 700;
-line-height: 20px;
-text-align: center;
-color: #0E0D12;
-background: linear-gradient(0deg, #ECCB66, #ECCB66),
-linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
-padding: 8px 20px 8px 20px;
-border: none;
-border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    color: #0E0D12;
+    background:
+        linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+    padding: 8px 20px 8px 20px;
+    border: none;
+    border-radius: 8px;
 }
+
 .search {
     display: flex;
     align-items: center;
@@ -266,334 +302,386 @@ border-radius: 8px;
     border-radius: 8px;
     width: 100%;
 }
-.search h2{
+
+.search h2 {
     font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 500;
-line-height: 19.2px;
-text-align: left;
-color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    text-align: left;
+    color: white;
 }
-@media(max-width:430px){
-    .logo{
+
+@media(max-width:430px) {
+    .logo {
         width: 50%;
     }
-    .rightbonus{
+
+    .rightbonus {
         width: 50%;
     }
 }
-.main{
-    
+
+.main {
+
     align-items: flex-start;
 }
 
-.main h2{
+.main h2 {
     font-family: TT Travels Trl;
-font-size: 32px;
-font-weight: 500;
-line-height: 38.4px;
-text-align: left;
-color: white;
-margin-bottom: 4%;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 38.4px;
+    text-align: left;
+    color: white;
+    margin-bottom: 4%;
 }
-.main p{
+
+.main p {
     font-family: TT Travels Trl;
-font-size: 24px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
-color: #E8E8E8;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #E8E8E8;
 }
-.price h3{
+
+.price h3 {
     font-family: TT Travels Trl;
-font-size: 18px;
-font-weight: 700;
-line-height: 20px;
-color: white;
-margin-top: 25%;
-text-align: center;
-margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    color: white;
+    margin-top: 25%;
+    text-align: center;
+    margin-bottom: 20px;
 }
-.price button{
+
+.price button {
     background: linear-gradient(96.72deg, #25D0B6 38.61%, #3760E3 99.08%);
     font-family: TT Travels Trl;
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
     text-align: center;
-color: white; 
-width: 100%;   
-padding: 10px 40px 10px 40px;
-border: none;
+    color: white;
+    width: 100%;
+    padding: 10px 40px 10px 40px;
+    border: none;
 }
-@media(max-width:992px){
-    .main h2{
+
+@media(max-width:992px) {
+    .main h2 {
         margin-top: 20px;
         margin-bottom: 2%;
         font-family: TT Travels Trl;
-font-size: 32px;
-font-weight: 500;
-line-height: 38.4px;
-text-align: left;
-color: white;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 38.4px;
+        text-align: left;
+        color: white;
     }
-    .main p{
+
+    .main p {
         font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
-color: #E8E8E8;
-margin-bottom: 7%;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        color: #E8E8E8;
+        margin-bottom: 7%;
     }
-    .price button{
+
+    .price button {
         font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 700;
-line-height: 20px;
-text-align: center;
-color: #FFFFFF;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        text-align: center;
+        color: #FFFFFF;
     }
-    
+
 }
-.rating h3{
+
+.rating h3 {
     font-family: TT Travels Trl;
-font-size: 18px;
-font-weight: 500;
-line-height: 24px;
-text-align: left;
-color: white;
-margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    color: white;
+    margin-bottom: 8px;
 }
-.rate{
+
+.rate {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-.rating{
+
+.rating {
     padding: 20px;
 }
-.rate img{
+
+.rate img {
     margin-right: 10px;
 }
-.rate p{
+
+.rate p {
     font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
-color: white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: white;
 }
-.rating h4{
+
+.rating h4 {
     font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
-color: #E8E8E8;
-margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #E8E8E8;
+    margin-bottom: 20px;
 }
-.rating h4:nth-of-type(3){
+
+.rating h4:nth-of-type(3) {
     margin-bottom: 0;
 }
-.paying h4{
+
+.paying h4 {
     font-family: TT Travels Trl;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
     text-align: left;
-color: white;    
-}
-.sec2{
-    margin-top: 10%;
-}
-.sec2 h2{
-    font-family: TT Travels Trl;
-font-size: 32px;
-font-weight: 600;
-line-height: 24px;
-text-align: left;
-color: white;
-}
-
-.desc h3{
-    font-family: TT Travels Trl;
-font-size: 24px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
-color: #E8E8E8;
-margin-bottom: 5%;
-}
-.desc h3:nth-of-type(3){
-    margin-bottom: 0;
-}
-.right h4{
     color: white;
 }
-.seconddesc{
+
+.sec2 {
+    margin-top: 10%;
+}
+
+.sec2 h2 {
+    font-family: TT Travels Trl;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    color: white;
+}
+
+.desc h3 {
+    font-family: TT Travels Trl;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #E8E8E8;
+    margin-bottom: 5%;
+}
+
+.desc h3:nth-of-type(3) {
+    margin-bottom: 0;
+}
+
+.right h4 {
+    color: white;
+}
+
+.seconddesc {
     border: 4px solid var(--Blue, #3760E3);
     border-radius: 10px;
     padding: 20px;
     margin-right: 20px;
 }
-.mkcircle{
+
+.mkcircle {
     width: 100px;
     border-radius: 50%;
 }
-@media(max-width:992px){
-    .sec2 h2{
+
+@media(max-width:992px) {
+    .sec2 h2 {
         font-family: TT Travels Trl;
-font-size: 24px;
-font-weight: 600;
-line-height: 24px;
-text-align: left;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 24px;
+        text-align: left;
 
     }
-    .desc h3:nth-of-type(2){
+
+    .desc h3:nth-of-type(2) {
         display: none;
     }
-    .desc h3:nth-of-type(3){
+
+    .desc h3:nth-of-type(3) {
         display: none;
     }
-    .desc h3:nth-of-type(1){
+
+    .desc h3:nth-of-type(1) {
         margin-bottom: 0;
     }
-    .seconddesc{
+
+    .seconddesc {
         margin-bottom: 20px;
         margin-right: 0;
     }
-    .right img{
+
+    .right img {
         margin-right: 20px;
     }
 }
-.right h5{
+
+.right h5 {
     font-family: TT Travels Trl;
-font-size: 18px;
-font-weight: 700;
-line-height: 20px;
-text-align: left;
-color: white;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+    color: white;
 }
-.descc{
+
+.descc {
     margin-top: 2%;
 }
-.right button{
+
+.right button {
     font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 700;
-line-height: 20px;
-text-align: center;
-background: linear-gradient(96.72deg, #25D0B6 38.61%, #3760E3 99.08%);
-color: white;
-width: 100%;
-padding-top: 10px;
-padding-bottom: 10px;
-border-radius: 10px;
-border: none;
-margin-top: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    background: linear-gradient(96.72deg, #25D0B6 38.61%, #3760E3 99.08%);
+    color: white;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 25px;
 }
-.mkmk{
+
+.mkmk {
     display: flex;
     border: 4px solid var(--Blue, #3760E3);
     border-radius: 10px;
     align-items: center;
     padding: 20px 20px 20px 20px;
 }
-.minimk{
+
+.minimk {
     display: flex;
     align-items: center;
 }
-.right img{
+
+.right img {
     width: 60px;
     height: 60px;
 }
-.mkmk h4{
+
+.mkmk h4 {
     font-family: TT Travels Trl;
-font-size: 14px;
-font-weight: 400;
-line-height: 16px;
-text-align: left;
-color: white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    color: white;
 }
-.mkmk h5{
+
+.mkmk h5 {
     margin-top: 25px;
 }
-@media(max-width:992px){
-    .mkmk h4{
+
+@media(max-width:992px) {
+    .mkmk h4 {
         font-size: 20px;
         line-height: 20px;
     }
 }
-.logotip{
+
+.logotip {
     display: flex;
     align-items: center;
 }
-.logotip h2{
+
+.logotip h2 {
     font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 700;
-line-height: 24px;
-text-align: left;
-color: white;
-margin-left: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    color: white;
+    margin-left: 10px;
 }
-.bottom{
+
+.bottom {
     margin-top: 8%;
     margin-bottom: 5%;
 }
-.bottom h3{
+
+.bottom h3 {
     font-family: TT Travels Trl;
-font-size: 16px;
-font-weight: 400;
-line-height: 19.2px;
-text-align: left;
-color: white;
-margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+    color: white;
+    margin-bottom: 30px;
 }
-.sociallinks{
+
+.sociallinks {
     display: flex;
     align-items: center;
 }
-.sociallinks img{
+
+.sociallinks img {
     margin-right: 20px;
 }
-.bottom button{
-    background: linear-gradient(0deg, #ECCB66, #ECCB66),linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
-height: 44px;
-font-family: TT Travels Trl;
-font-size: 14px;
-font-weight: 700;
-line-height: 20px;
-text-align: center;
-color: black;
-border: none;
-border-radius: 8px;
-width: 100%;
+
+.bottom button {
+    background: linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+    height: 44px;
+    font-family: TT Travels Trl;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
 }
-.button_right{
+
+.button_right {
     text-align: right;
 }
-.flex{
+
+.flex {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
 }
-.text_rightt h3{
-   text-align: right;
+
+.text_rightt h3 {
+    text-align: right;
 }
 
-@media(max-width:992px){
-    .bottom button{
+@media(max-width:992px) {
+    .bottom button {
         width: 100%;
     }
-    .button_right{
+
+    .button_right {
         text-align: right;
     }
-    .sociallinks{
+
+    .sociallinks {
         justify-content: flex-end;
     }
-    .sociallinks img:nth-of-type(3){
+
+    .sociallinks img:nth-of-type(3) {
         margin-right: 0;
     }
 }

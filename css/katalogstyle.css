@@ -44,6 +44,8 @@ header {
     opacity: 0; /* Скрываем элемент до начала анимации */
     animation: fadeIn 0.5s ease-out forwards;
     animation-delay: 0s; /* Тайминг совпадает с .novinki */
+    z-index: 20;
+    position: relative;
 }
 .try{
     font-size: 10px;
@@ -81,6 +83,7 @@ header {
     position: relative; /* Изменяем позиционирование на relative, чтобы оно реагировало на сетку Bootstrap */
     display: flex;
     align-items: center;
+    margin-bottom: 3px;
   }
   
   #menu__toggle:checked ~ .menu__box {
@@ -89,8 +92,7 @@ header {
     background: #fff;
     color: white;
     text-align: center;
-    z-index: 10;
-    position: fixed;
+    
   }
   
   .menu__btn {
@@ -385,7 +387,7 @@ padding-top: 10px;
 .maincontainer {
     margin-top: 70px;
     z-index: 1;
-    position: relative;
+    
 }
 
 .mdpixels {

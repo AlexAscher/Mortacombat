@@ -63,7 +63,7 @@ body{
 }
 #menu__toggle:checked ~ .menu__btn > span::before {
   top: 0;
-  right: 0;
+  right: 0; 
   transform: rotate(0);
   width: 30px;
 }
@@ -81,7 +81,12 @@ body{
     position: relative; /* Изменяем позиционирование на relative, чтобы оно реагировало на сетку Bootstrap */
     display: flex;
     align-items: center;
-    
+    margin-bottom: 20px;
+}
+@media(min-width:768px) and (max-width:992px){
+    .hamburger-menu{
+        margin-bottom: 6px;
+    }
 }
 #menu__toggle:checked ~ .menu__box {
   visibility: visible;
@@ -102,7 +107,6 @@ text-align: center;
     z-index: 11;
     text-align: center;
     border-radius: 10px;
-    
 }
 
 .menu__btn > span,

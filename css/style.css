@@ -574,7 +574,7 @@ body {
     gap: 0px;
     border-radius: 30px;
     opacity: 0px;
-
+    cursor: pointer;
 }
 
 .shop h2 {
@@ -597,6 +597,7 @@ body {
     position: relative;
     background: linear-gradient(161.69deg, #3791FD 39.73%, #3760E3 87.81%);
     overflow: hidden;
+    cursor: pointer;
 }
 
 .shop2 h2 {

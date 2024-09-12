@@ -391,13 +391,15 @@ body {
 .imgsteam {
     position: absolute;
     width: 297.21px;
-    height: 342.18px;
-    top: -20px;
+    height: 300px;
+    bottom: 0;
     right: 0;
     gap: 0px;
     opacity: 0px;
     z-index: 0;
 }
+
+
 
 .mdpixels {
     padding-left: 60px;
@@ -422,6 +424,8 @@ body {
     opacity: 0px;
     z-index: 0;
 }
+
+
 
 .popolnit {
     position: relative;
@@ -690,8 +694,8 @@ body {
 @media(max-width:568px) {
     .secondimgsteam {
         width: 150.9px;
-        height: 194.15px;
-        bottom: -22px;
+        height: 152px;
+        bottom: 0;
 
     }
 

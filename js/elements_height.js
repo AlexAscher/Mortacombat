@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.onload = () => {
     const elements = document.querySelectorAll('.vsetovari');
     const tovari = document.querySelectorAll('.tovari');
     let maxHeight = 0;
@@ -24,4 +24,4 @@ document.addEventListener('DOMContentLoaded', () => {
     tovari.forEach(element => {
         element.style.height = `${maxHeighttovari}px`;
     });
-});
+};

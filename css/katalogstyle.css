@@ -47,7 +47,8 @@ body {
 
 header {
     z-index: 20;
-    position: relative;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .try {

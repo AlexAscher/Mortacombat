@@ -474,6 +474,12 @@ details li {
     margin-left: 40px;
 }
 
+.one,
+.two,
+.three {
+    justify-content: center;
+}
+
 .price {
     border: 3px solid #36EBCF;
     padding: 40px 30px 40px 30px;
@@ -692,6 +698,8 @@ details li {
 
 .forcarusel {
     min-width: 0;
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .carusel {

@@ -28,22 +28,25 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.carusel').slick({
             arrows: true,
             dots: true,
-            adaptiveHeight: true,
             slidesToShow: 3,
             speed: 800,
-            autoplay: false,
+            autoplay: true,
+            autoplaySpeed: 5000,
             draggable: false,
             swipe: false,
             responsive: [{
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
                 },
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1,
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1
+                    }
                 }
-            }]
+            ]
         });
         startCarousel(); // Запускаем автопрокрутку после обновления карусели
     }

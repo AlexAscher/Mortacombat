@@ -9,11 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const detailsElements = document.querySelectorAll(".firstdetail");
     const detailsElements2 = document.querySelectorAll(".firstdetail2");
 
-    buttons[0].addEventListener("click", function () {
-        toggleDetails(buttons[0], detailsElements);
-    });
-
-    buttons[1].addEventListener("click", function () {
-        toggleDetails(buttons[1], detailsElements2);
+    buttons.forEach((button, index) => {
+        button.addEventListener("click", function () {
+            const details = index === 0 ? detailsElements : detailsElements2;
+            toggleDetails(button, details);
+        });
     });
 });

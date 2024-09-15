@@ -702,6 +702,12 @@ details li {
     padding-left: 0;
 }
 
+.forcarusel,
+.forcarusel2,
+.forcarusel3 {
+    margin-bottom: 120px;
+}
+
 .carusel {
     min-width: 0;
     position: relative;
@@ -850,22 +856,6 @@ details li {
     right: 25px;
 }
 
-.circles {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 120px;
-}
-
-.circles2 {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 120px;
-}
-
 .logotip {
     display: flex;
     align-items: center;
@@ -882,7 +872,7 @@ details li {
 }
 
 .bottom {
-    margin-top: 150px;
+
     margin-bottom: 5%;
 }
 

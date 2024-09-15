@@ -212,6 +212,12 @@ body {
     }
 }
 
+header {
+    z-index: 20;
+    overflow-x: hidden;
+    width: 100%;
+}
+
 .headerr {
     padding-top: 40px;
 }

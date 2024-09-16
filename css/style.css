@@ -14,6 +14,12 @@ body {
     top: -25px;
 }
 
+@media (min-width: 1400px) {
+    .container-fluid {
+        max-width: 1360px;
+    }
+}
+
 @font-face {
     font-family: 'TT Travels Trl';
     src: url('../fonts/TTTravelsTrial_Light.otf');
@@ -642,7 +648,7 @@ a {
     width: 313px;
     height: 313px;
     bottom: 0;
-    left: 15px;
+    right: 0;
     gap: 0px;
     opacity: 0px;
 

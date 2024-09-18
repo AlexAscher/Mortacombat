@@ -130,8 +130,7 @@ body {
     position: absolute;
     width: 34px;
     height: 2px;
-    background: linear-gradient(0deg, #ECCB66, #ECCB66), linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
-    transition-duration: .25s;
+    background: white;
 }
 
 .menu__btn>span::before {
@@ -194,6 +193,10 @@ body {
 .text_right {
     text-align: right;
     align-self: center;
+}
+
+.bottom a {
+    color: white;
 }
 
 .text_center {
@@ -371,6 +374,7 @@ header {
 .popolnenie {
     background: linear-gradient(161.69deg, #25D0B6 39.73%, #3760E3 87.81%);
     width: 100%;
+    cursor: pointer;
 }
 
 .donat h3 {
@@ -425,8 +429,8 @@ header {
 
 
 .mdpixels {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 35px;
+    padding-right: 35px;
 }
 
 @media(max-width:568px) {
@@ -457,6 +461,7 @@ header {
     background-repeat: 8px;
     height: 326px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .popolnit h3 {
@@ -505,6 +510,7 @@ header {
 .gift {
     background: linear-gradient(132.71deg, #3791FD 23.81%, #8ED7E5 70.02%);
     position: relative;
+    cursor: pointer;
 }
 
 .gift h2 {
@@ -544,6 +550,7 @@ header {
     opacity: 0px;
     background: linear-gradient(132.71deg, #3791FD 23.81%, #8ED7E5 70.02%);
     position: relative;
+    cursor: pointer;
 }
 
 .gift h2 {
@@ -648,7 +655,7 @@ a {
     width: 313px;
     height: 313px;
     bottom: 0;
-    right: 0;
+    right: -110px;
     gap: 0px;
     opacity: 0px;
 
@@ -817,7 +824,7 @@ a {
 .codes {
     background: linear-gradient(161.69deg, #25D0B6 39.73%, #3760E3 87.81%);
     position: relative;
-
+    cursor: pointer;
     height: 620px;
     gap: 0px;
     border-radius: 30px;
@@ -932,6 +939,7 @@ a {
     padding-top: 20px;
     padding-left: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .skins h2 {
@@ -978,7 +986,7 @@ a {
 
 .mobile {
     background: linear-gradient(161.69deg, #3791FD 39.73%, #3760E3 87.81%);
-
+    cursor: pointer;
     position: relative;
     overflow: hidden;
     height: 300px;
@@ -1015,6 +1023,7 @@ a {
     padding-top: 20px;
     padding-left: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .features1 {
@@ -1082,6 +1091,7 @@ a {
     padding-top: 20px;
     padding-left: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .barbarian {

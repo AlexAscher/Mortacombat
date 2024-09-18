@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     popularity.addEventListener('click', function () {
-        handleTabClick(popularity, false, false, true, 'Популярные', true, true, true, false);
+        handleTabClick(popularity, false, false, true, 'Популярное', true, true, true, false);
     });
 
     // Изначально скрываем элементы two и three

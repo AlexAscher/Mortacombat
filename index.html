@@ -305,7 +305,61 @@
                     <h3 style="cursor: pointer;" onclick="window.location.href='inDevelop.html';">Покупай ключи</h3>
                 </div>
                 <div class="col-lg-3">
-                    <h3><a href="">Заполнить форму</a></h3>
+                    <div class="button">
+                        <h3><a href="#" id="open_pop_up" style="cursor: pointer;">Заполнить форму</a></h3>
+                    </div>
+                    <div class="pop_up" id="pop_up">
+                        <div class="pop_up_container">
+                            <div class="pop_up_body" id="pop_up_body">
+                                <p>Оставить заказ</p>
+                                <form action="" id="form">
+                                    <input type="text" name="Имя" placeholder="Имя" required>
+                                    <input type="text" name="Телефон" placeholder="Телефон" pattern="\+?\d{11,12}"
+                                        title="Введите телефон в формате +12345678901 или 12345678901" required>
+                                    <input type="text" name="Почта" placeholder="Почта" required>
+                                    <input type="text" name="Любимая игра 1" placeholder="Любимая игра" required>
+                                    <div id="input0"></div>
+                                    <div class="add" onclick="addInput()" id="add">+</div>
+                                    <div class="select1">
+                                        <h3>Выберите свой любимый жанр игр:</h3>
+                                        <div class="select_wrapper">
+                                            <select name="Тема" id="theme" class="select">
+                                                <option value="rpg">РПГ</option>
+                                                <option value="shoot">Шутинги</option>
+                                                <option value="simulators">Симуляторы</option>
+                                                <option value="Свой вариант"">Свой вариант
+                                                
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class=" another_answer" style="display:none;">
+                                                    <input name="Мой вариант" type="text" placeholder="Ваш вариант"
+                                                        id="yourVariant">
+                                        </div>
+                                    </div>
+                                    <button type="submit">Оставить заказ</button>
+                                </form>
+                                <div class="pop_up_close" id="close_pop_up">&#10006</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stop" id="stop">
+                        <div class="stop_container">
+                            <div class="stop_body" id="stop_body">
+                                <p>Нельзя ввести больше 3 игр</p>
+                                <div class="pop_up_close" id="close_stop">&#10006</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result" id="result">
+                        <div class="result_container">
+                            <div class="result_body" id="result_body">
+                                <p>Введенные данные:</p>
+                                <div id="result_content"></div>
+                                <div class="pop_up_close" id="close_result">&#10006</div>
+                            </div>
+                        </div>
+                    </div>
                     <h3 onclick="window.location.href='inDevelop.html';">Контакты</h3>
                     <div class="sociallinks">
                         <img src="./img/sobaka.svg" alt="">
@@ -324,7 +378,6 @@
             <div class="row">
                 <div class="flex">
                     <div class="col-sm-8 col-8">
-
                         <div class="logotip">
                             <img src="./img/logo.svg" alt="">
                             <h2>Логотип</h2>
@@ -343,7 +396,63 @@
                 </div>
                 <div class="col-sm-4 col-6">
                     <div class="text_rightt">
-                        <h3><a href="">Заполнить форму</a></h3>
+                        <div class="button">
+                            <h3><a href="#" id="open_pop_up1" style="cursor: pointer;">Заполнить форму</a></h3>
+                        </div>
+
+                        <div class="pop_up" id="pop_up1">
+                            <div class="pop_up_container">
+                                <div class="pop_up_body" id="pop_up_body1">
+                                    <p>Оставить заказ</p>
+                                    <form action="" id="form1">
+                                        <input type="text" name="Имя" placeholder="Имя" required>
+                                        <input type="text" name="Телефон" placeholder="Телефон" pattern="\+?\d{11,12}"
+                                            title="Введите телефон в формате +12345678901 или 12345678901" required>
+                                        <input type="text" name="Почта" placeholder="Почта" required>
+                                        <input type="text" name="Любимая игра 1" placeholder="Любимая игра" required>
+                                        <div id="input01"></div>
+                                        <div class="add" onclick="addInput1()" id="add1">+</div>
+                                        <div class="select1">
+                                            <h3>Выберите свой любимый жанр игр:</h3>
+                                            <div class="select_wrapper">
+                                                <select name="Тема" id="theme1" class="select">
+                                                    <option value="rpg">РПГ</option>
+                                                    <option value="shoot">Шутинги</option>
+                                                    <option value="simulators">Симуляторы</option>
+                                                    <option value="Свой вариант">Свой вариант</option>
+                                                </select>
+                                            </div>
+                                            <div class="another_answer" style="display:none;">
+                                                <input name="Мой вариант" type="text" placeholder="Ваш вариант"
+                                                    id="yourVariant1">
+                                            </div>
+                                        </div>
+                                        <button type="submit">Оставить заказ</button>
+                                    </form>
+                                    <div class="pop_up_close" id="close_pop_up1">&#10006</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stop" id="stop1">
+                            <div class="stop_container">
+                                <div class="stop_body" id="stop_body1">
+                                    <p>Нельзя ввести больше 3 игр</p>
+                                    <div class="pop_up_close" id="close_stop1">&#10006</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="result" id="result1">
+                            <div class="result_container">
+                                <div class="result_body" id="result_body1">
+                                    <p>Введенные данные:</p>
+                                    <div id="result_content1"></div>
+                                    <div class="pop_up_close" id="close_result1">&#10006</div>
+                                </div>
+                            </div>
+                        </div>
+
                         <h3 onclick="window.location.href='inDevelop.html';">Контакты</h3>
                         <div class="sociallinks">
                             <img src="./img/sobaka.svg" alt="">
@@ -354,7 +463,11 @@
                 </div>
             </div>
         </div>
+
     </section>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="./js/resize.js"></script>
     <script src="./js/elements_height.js"></script>
+    <script src="./js/modal.js"></script>
 </body>

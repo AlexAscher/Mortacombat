@@ -101,10 +101,14 @@ body {
     }
 }
 
+.menu__item1 {
+    margin-bottom: 200px;
+}
+
 #menu__toggle:checked~.menu__box {
     visibility: visible;
     right: 0;
-    background: #fff;
+    background: linear-gradient(161.69deg, #16BED0 39.73%, #283BB0 87.81%);
     color: white;
     text-align: center;
 }
@@ -130,12 +134,14 @@ body {
     position: absolute;
     width: 34px;
     height: 2px;
-    background: white;
+    background: rgb(255, 255, 255);
+    transition-duration: .25s;
 }
 
 .menu__btn>span::before {
     content: '';
     top: -8px;
+
 }
 
 .menu__btn>span::after {
@@ -161,7 +167,7 @@ body {
 }
 
 .menu_item1 {
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     line-height: 30px;
     font-size: 18px;

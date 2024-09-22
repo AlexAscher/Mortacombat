@@ -82,6 +82,7 @@ body {
     right: 0;
     transform: rotate(0);
     width: 30px;
+    background-color: #000;
 }
 
 #menu__toggle:checked~.menu__btn>span::after {
@@ -89,6 +90,7 @@ body {
     transform: rotate(90deg);
     right: 0;
     width: 30px;
+    background-color: #000;
 }
 
 #menu__toggle:checked~.menu__btn {
@@ -116,7 +118,7 @@ body {
 #menu__toggle:checked~.menu__box {
     visibility: visible;
     right: 0;
-    background: linear-gradient(161.69deg, #16BED0 39.73%, #283BB0 87.81%);
+    background: white;
     color: white;
     text-align: center;
 }

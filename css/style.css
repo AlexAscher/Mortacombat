@@ -74,6 +74,7 @@ body {
     right: 0;
     transform: rotate(0);
     width: 30px;
+    background-color: #000;
 }
 
 #menu__toggle:checked~.menu__btn>span::after {
@@ -81,6 +82,7 @@ body {
     transform: rotate(90deg);
     right: 0;
     width: 30px;
+    background-color: #000;
 }
 
 #menu__toggle:checked~.menu__btn {
@@ -108,7 +110,7 @@ body {
 #menu__toggle:checked~.menu__box {
     visibility: visible;
     right: 0;
-    background: linear-gradient(161.69deg, #16BED0 39.73%, #283BB0 87.81%);
+    background: white;
     color: white;
     text-align: center;
 }
@@ -132,7 +134,7 @@ body {
 .menu__btn>span::after {
     display: block;
     position: absolute;
-    width: 34px;
+    width: 29px;
     height: 2px;
     background: rgb(255, 255, 255);
     transition-duration: .25s;
@@ -167,7 +169,7 @@ body {
 }
 
 .menu_item1 {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-decoration: none;
     line-height: 30px;
     font-size: 18px;

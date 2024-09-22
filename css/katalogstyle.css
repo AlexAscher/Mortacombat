@@ -101,13 +101,16 @@ header {
     margin-bottom: 3px;
 }
 
+.menu__item1 {
+    margin-bottom: 200px;
+}
+
 #menu__toggle:checked~.menu__box {
     visibility: visible;
     right: 0;
-    background: #fff;
+    background: white;
     color: white;
     text-align: center;
-
 }
 
 .menu__btn {

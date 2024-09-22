@@ -109,10 +109,14 @@ body {
     }
 }
 
+.menu__item1 {
+    margin-bottom: 200px;
+}
+
 #menu__toggle:checked~.menu__box {
     visibility: visible;
     right: 0;
-    background: #fff;
+    background: linear-gradient(161.69deg, #16BED0 39.73%, #283BB0 87.81%);
     color: white;
     text-align: center;
 }

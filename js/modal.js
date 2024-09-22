@@ -135,7 +135,7 @@ function stopAlert1() {
 // Добавление нового поля для игры
 function addInput1() {
     if (x1 < 2) {
-        var str = '<input type="text" name="Любимая игра ' + (x1 + 2) + '" placeholder="Любимая игра"> <div id="input' + (x1 + 1) + '"></div>';
+        var str = '<input type="text" name="Любимая игра ' + (x1 + 2) + '" placeholder="Любимая игра"> <div id="input' + (x1 + 1) + '1"></div>';
         document.getElementById('input' + x1 + '1').innerHTML = str;
         x1++;
     } else {

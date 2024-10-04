@@ -703,6 +703,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    overflow-y: auto;
 }
 
 #quiz h2 {
@@ -809,6 +810,7 @@ body {
     padding: 20px;
     margin-top: 5%;
     margin-bottom: 5%;
+    border: 1px solid black;
 }
 
 

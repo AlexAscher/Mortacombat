@@ -206,7 +206,6 @@ body {
 
 .text_right {
     text-align: right;
-    align-self: center;
 }
 
 .text_center {
@@ -610,6 +609,7 @@ body {
 .logotip {
     display: flex;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .logotip h2 {
@@ -646,7 +646,7 @@ body {
     margin-right: 20px;
 }
 
-.bottom button {
+.bonusButton {
     background: linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
     height: 44px;
     font-family: TT Travels Trl;
@@ -690,4 +690,207 @@ body {
     .sociallinks img:nth-of-type(3) {
         margin-right: 0;
     }
+}
+
+#quiz {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#quiz h2 {
+    font-family: TT Travels Trl;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+
+#question {
+    font-family: TT Travels Trl;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: #000;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#options button {
+    font-size: 16px;
+    padding: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#nextBtn {
+    width: 100%;
+    font-family: TT Travels Trl;
+    display: none;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 15px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+
+}
+
+#result {
+    font-family: TT Travels Trl;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+}
+
+.option-btn {
+    font-family: TT Travels Trl;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid #6f73c5;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 100%;
+    justify-content: start;
+}
+
+.option-btn .circle {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.option-btn:hover {
+    background-color: rgb(0, 0, 0) !important;
+    color: white;
+}
+
+.option-btn span {
+    margin-top: 2px;
+}
+
+.active {
+    background-color: rgba(0, 0, 0, 0.336) !important;
+    color: white;
+}
+
+.input-answer {
+    padding: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+.options {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.match-pair {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+
+}
+
+.label-item {
+    font-family: TT Travels Trl;
+    width: 120px;
+    font-size: 18px;
+    color: black;
+}
+
+.select-item {
+    flex: 1;
+    padding: 5px;
+
+}
+
+.pop_up {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    transform: translateY(-44.5%) scale(0);
+    transition: .4s ease-in-out;
+    background-color: transparent transparent;
+}
+
+.pop_up.active {
+    display: block;
+    transform: translateY(0%) scale(1);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.pop_up_container {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+    justify-content: center;
+
+    overflow-y: auto;
+    display: flex;
+}
+
+.pop_up_body {
+    margin: auto;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    position: relative;
+    padding: 30px 15px 30px 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.pop_up_close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 21px;
+    cursor: pointer;
+    color: black;
+}
+
+.select-item {
+    font-family: TT Travels Trl;
+}
+
+.activeForQuiz {
+    background-color: #000 !important;
+    color: white;
+}
+
+.bottom a {
+    color: white;
+    text-decoration: none;
 }

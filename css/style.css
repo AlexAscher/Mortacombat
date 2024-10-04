@@ -1382,10 +1382,22 @@ a {
 .sociallinks {
     display: flex;
     align-items: center;
+
 }
 
 .sociallinks img {
     margin-right: 20px;
+}
+
+@media(max-width:992px) {
+    .sociallinks {
+        justify-content: flex-end;
+    }
+
+    .sociallinks img {
+        margin-right: 0;
+        margin-left: 20px;
+    }
 }
 
 .tovari {
@@ -1519,6 +1531,7 @@ a {
 }
 
 .pop_up_body p {
+    font-family: TT Travels Trl;
     font-size: 28px;
     font-weight: 600;
     color: #000;
@@ -1530,6 +1543,7 @@ a {
 }
 
 .pop_up_body form input {
+    font-family: TT Travels Trl;
     display: block;
     margin: 10px auto 0px auto;
     width: 90%;
@@ -1557,7 +1571,7 @@ a {
     width: 100%;
     max-width: 400px;
     margin: 30px auto 0px auto;
-
+    font-family: TT Travels Trl;
     font-weight: 700;
     line-height: 20px;
     text-align: center;
@@ -1573,6 +1587,7 @@ a {
     right: 15px;
     font-size: 21px;
     cursor: pointer;
+    color: black;
 }
 
 .add {
@@ -1592,6 +1607,7 @@ a {
 }
 
 .select {
+    font-family: TT Travels Trl;
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;

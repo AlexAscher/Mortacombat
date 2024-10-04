@@ -18,7 +18,6 @@ openPopup.addEventListener('click', function (e) {
     popup.classList.add('active');
 });
 
-// Закрытие попапа и удаление затемнения
 closePopup.addEventListener('click', () => {
     popup.classList.remove('active');
 });

@@ -134,15 +134,27 @@ function loadQuestion() {
             button.appendChild(circle);
             button.appendChild(text);
             optionsElement.appendChild(button);
-            button.addEventListener('click', () => {
+
+            let isActive = false;
+
+            const handleClick = () => {
                 if (selectedOption.includes(option)) {
                     selectedOption = selectedOption.filter(item => item !== option);
                     button.classList.remove('activeForQuiz');
+                    isActive = false;
                 } else {
                     selectedOption.push(option);
                     button.classList.add('activeForQuiz');
+                    isActive = true;
                 }
                 nextButton.style.display = 'block';
+            };
+
+            // Убедимся, что обработчики не конфликтуют
+            button.addEventListener('click', handleClick);
+            button.addEventListener('touchstart', (e) => {
+                e.preventDefault(); // Предотвращаем двойное срабатывание
+                handleClick();
             });
         });
     }
@@ -186,27 +198,24 @@ function showResult() {
     resultElement.textContent = 'Вы набрали ' + score + ' из ' + quizData.length + ' баллов.';
 }
 
-// Добавляем функцию сброса состояния
 function resetQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     selectedOption = [];
     selectedOptionForSelect = {};
-    resultElement.textContent = ''; // Очищаем результаты
-    nextButton.textContent = 'Следующий вопрос'; // Возвращаем текст кнопки
-    nextButton.removeEventListener('click', closeQuizPopup); // Убираем обработчик закрытия
-    nextButton.addEventListener('click', nextQuestion); // Возвращаем обработчик для следующего вопроса
-    loadQuestion(); // Загружаем первый вопрос заново
+    resultElement.textContent = '';
+    nextButton.textContent = 'Следующий вопрос';
+    nextButton.removeEventListener('click', closeQuizPopup);
+    nextButton.addEventListener('click', nextQuestion);
+    loadQuestion();
 }
 
-// Функция для закрытия попапа и сброса состояния
 function closeQuizPopup() {
     const popUp = document.getElementById('pop_up');
-    popUp.classList.remove('active'); // Закрываем попап
-    resetQuiz(); // Сбрасываем викторину
+    popUp.classList.remove('active');
+    resetQuiz();
 }
 
-// Функция открытия/закрытия попапа
 function togglePopup(openButton, closeButton, popupElement) {
     openButton.addEventListener('click', function (e) {
         e.preventDefault();
@@ -216,7 +225,7 @@ function togglePopup(openButton, closeButton, popupElement) {
 
     closeButton.addEventListener('click', function () {
         popupElement.classList.remove('active');
-        resetQuiz(); // Сбрасываем викторину при закрытии
+        resetQuiz();
     });
 }
 
@@ -225,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const closePopUp = document.getElementById('close_pop_up');
     const popUp = document.getElementById('pop_up');
 
-    // Применяем функцию для этого попапа
+
     togglePopup(openPopUp, closePopUp, popUp);
 });
 

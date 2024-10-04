@@ -675,6 +675,13 @@ body {
 }
 
 @media(max-width:992px) {
+    .button h3 {
+        text-align: end;
+    }
+}
+
+
+@media(max-width:992px) {
     .bottom button {
         width: 100%;
     }
@@ -769,6 +776,11 @@ body {
     margin: 10px 0;
     width: 100%;
     justify-content: start;
+}
+
+.option-btn.activeForQuiz {
+    background-color: #000 !important;
+    color: white;
 }
 
 .option-btn .circle {
@@ -885,10 +897,7 @@ body {
     font-family: TT Travels Trl;
 }
 
-.activeForQuiz {
-    background-color: #000 !important;
-    color: white;
-}
+
 
 .bottom a {
     color: white;

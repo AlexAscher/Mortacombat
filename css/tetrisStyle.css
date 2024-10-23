@@ -182,17 +182,26 @@ canvas,
 }
 
 .sketch-btn1 {
-
     margin-bottom: 10px;
     font-size: 16px;
-
     cursor: pointer;
-    
     color: white;
     border-radius: 8px;
     box-shadow: 0 0 .2rem #fff, 0 0 .2rem #fff, 0 0 2rem #3760E3, 0 0 0.8rem #3760E3, 0 0 2.8rem #3760E3, inset 0 0 1.3rem #3760E3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
-
+.sketch-btn1 span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sketch-btn1 img {
+    width: 16px;
+    height: 16px;
+}
 .diff {
     margin-bottom: 10px;
     font-family: TT Travels Trl;

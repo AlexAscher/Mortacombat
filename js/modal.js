@@ -1,187 +1,101 @@
-const openPopup = document.getElementById('open_pop_up');
-const closePopup = document.getElementById('close_pop_up');
-const popup = document.getElementById('pop_up');
-const body = document.querySelector('body');
-const stop = document.getElementById('stop');
-const closeStop = document.getElementById('close_stop');
-const add = document.getElementById('add');
-const form = document.getElementById('form');
-const result = document.getElementById('result');
-const closeResult = document.getElementById('close_result');
-const resultContent = document.getElementById('result_content');
 let x = 0;
 
-// Открытие попапа с затемнённым фоном
-openPopup.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    popup.classList.add('active');
-});
+function initializePopupHandlers() {
+    const body = document.querySelector('body');
 
-closePopup.addEventListener('click', () => {
-    popup.classList.remove('active');
-});
+    body.addEventListener('click', function (e) {
+        const target = e.target;
 
-// Открытие другого попапа со своим затемнением
-closeStop.addEventListener('click', () => {
-    stop.classList.remove('active');
-});
+        // Открытие попапа
+        if (target.matches('[data-popup-open]')) {
+            e.preventDefault();
+            const popupId = target.getAttribute('data-popup-open');
+            const popup = document.querySelector(`[data-popup="${popupId}"]`);
+            if (popup) {
+                popup.classList.add('active');
+            }
+        }
 
-// Закрытие результата и удаление затемнения
-closeResult.addEventListener('click', () => {
-    result.classList.remove('active');
-});
+        // Закрытие попапа
+        if (target.matches('[data-popup-close]')) {
+            const popupId = target.getAttribute('data-popup-close');
+            const popup = document.querySelector(`[data-popup="${popupId}"]`);
+            if (popup) {
+                popup.classList.remove('active');
+            }
+        }
+    });
 
-// Функция для показа "остановки" с затемнением
-function stopAlert() {
-    stop.classList.add('active');
+    body.addEventListener('change', function (e) {
+        const target = e.target;
+
+        // Управление показом поля "Свой вариант"
+        if (target.matches('[data-select]')) {
+            const selectval = target.value;
+            const anotherAnswer = target.closest('.select1').querySelector('.another_answer');
+            if (selectval === 'Свой вариант') {
+                anotherAnswer.style.display = 'block';
+            } else {
+                anotherAnswer.style.display = 'none';
+            }
+        }
+    });
+
+    body.addEventListener('submit', function (e) {
+        if (e.target.matches('form')) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const resultContent = form.closest('.pop_up_body').querySelector('.resultcontent');
+            const result = form.closest('.pop_up_body').querySelector('.result');
+            let resultHTML = '<ul>';
+            formData.forEach((value, key) => {
+                if (value.trim()) {
+                    const marginTopValue = key === 'Телефон' ? '1px' : '0px';
+                    resultHTML += `
+                        <li style="display: flex; align-items: center; margin-top: 10px;">
+                            <strong style="
+                                font-family: TT Travels Trl;
+                                font-size: 16px;
+                                font-weight: 500;
+                                line-height: 20px;
+                                color: black;
+                                margin-right: 5px;
+                            ">${key}:</strong>
+                            <span style="
+                                font-family: TT Travels Trl;
+                                font-size: 15px;
+                                font-weight: 400;
+                                line-height: 20px;
+                                color: black;
+                                margin-top: ${marginTopValue};
+                            ">${value}</span>
+                        </li>`;
+                }
+            });
+            resultHTML += '</ul>';
+            resultContent.innerHTML = resultHTML;
+            result.classList.add('active');
+        }
+    });
 }
 
-
-function addInput() {
+function addInput(button) {
+    const container = button.closest('.pop_up_body');
+    const inputContainer = container.querySelector(`#input${x}`);
     if (x < 2) {
-        var str = '<input type="text" name="Любимая игра ' + (x + 2) + '" placeholder="Любимая игра"> <div id="input' + (x + 1) + '"></div>';
-        document.getElementById('input' + x).innerHTML = str;
+        const str = `<input type="text" name="Любимая игра ${x + 2}" placeholder="Любимая игра"> <div id="input${x + 1}"></div>`;
+        inputContainer.innerHTML = str;
         x++;
     } else {
-        stopAlert();
+        showStopAlert(container);
     }
 }
 
-$('#theme').change(function () {
-    var selectval = $(this).val();
-    if (selectval == 'Свой вариант') {
-        $('.another_answer').show();
-    } else {
-        $('.another_answer').hide();
-    }
-});
-
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formData = new FormData(form);
-    let resultHTML = '<ul>';
-    formData.forEach((value, key) => {
-        if (value.trim()) {
-            const marginTopValue = key === 'Телефон' ? '1px' : '0px';
-
-            resultHTML += `
-                <li style="display: flex; align-items: center; margin-top: 10px;">
-                    <strong style="
-                        font-family: TT Travels Trl;
-                        font-size: 16px;
-                        font-weight: 500;
-                        line-height: 20px;
-                        color: black;
-                        margin-right: 5px;
-                    ">${key}:</strong>
-                    <span style="
-                        font-family: TT Travels Trl;
-                        font-size: 15px;
-                        font-weight: 400;
-                        line-height: 20px;
-                        color: black;
-                        margin-top: ${marginTopValue};
-                    ">${value}</span>
-                </li>`;
-        }
-    });
-
-    resultHTML += '</ul>';
-    resultContent.innerHTML = resultHTML;
-    result.classList.add('active');
-});
-const openPopup1 = document.getElementById('open_pop_up1');
-const closePopup1 = document.getElementById('close_pop_up1');
-const popup1 = document.getElementById('pop_up1');
-const body1 = document.querySelector('body');
-const stop1 = document.getElementById('stop1');
-const closeStop1 = document.getElementById('close_stop1');
-const add1 = document.getElementById('add1');
-const form1 = document.getElementById('form1');
-const result1 = document.getElementById('result1');
-const closeResult1 = document.getElementById('close_result1');
-const resultContent1 = document.getElementById('result_content1');
-let x1 = 0;
-
-// Открытие попапа с затемнённым фоном
-openPopup1.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    popup1.classList.add('active');
-});
-
-// Закрытие попапа и удаление затемнения
-closePopup1.addEventListener('click', () => {
-    popup1.classList.remove('active');
-});
-
-// Закрытие попапа "остановка"
-closeStop1.addEventListener('click', () => {
-    stop1.classList.remove('active');
-});
-
-// Закрытие результата и удаление затемнения
-closeResult1.addEventListener('click', () => {
-    result1.classList.remove('active');
-});
-
-// Функция для показа "остановки" с затемнением
-function stopAlert1() {
-    stop1.classList.add('active');
+function showStopAlert(container) {
+    const stopAlert = container.querySelector('.stop');
+    stopAlert.classList.add('active');
 }
 
-// Добавление нового поля для игры
-function addInput1() {
-    if (x1 < 2) {
-        var str = '<input type="text" name="Любимая игра ' + (x1 + 2) + '" placeholder="Любимая игра"> <div id="input' + (x1 + 1) + '1"></div>';
-        document.getElementById('input' + x1 + '1').innerHTML = str;
-        x1++;
-    } else {
-        stopAlert1();
-    }
-}
-
-// Управление показом поля "Свой вариант"
-$('#theme1').change(function () {
-    var selectval = $(this).val();
-    if (selectval == 'Свой вариант') {
-        $('.another_answer').show();
-    } else {
-        $('.another_answer').hide();
-    }
-});
-
-// Обработка отправки формы
-form1.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formData = new FormData(form1);
-    let resultHTML = '<ul>';
-    formData.forEach((value, key) => {
-        if (value.trim()) {
-            const marginTopValue = key === 'Телефон' ? '1px' : '0px';
-            resultHTML += `
-                <li style="display: flex; align-items: center; margin-top: 10px;">
-                    <strong style="
-                        font-family: TT Travels Trl;
-                        font-size: 16px;
-                        font-weight: 500;
-                        line-height: 20px;
-                        color: black;
-                        margin-right: 5px;
-                    ">${key}:</strong>
-                    <span style="
-                        font-family: TT Travels Trl;
-                        font-size: 15px;
-                        font-weight: 400;
-                        line-height: 20px;
-                        color: black;
-                        margin-top: ${marginTopValue};
-                    ">${value}</span>
-                </li>`;
-        }
-    });
-    resultHTML += '</ul>';
-    resultContent1.innerHTML = resultHTML;
-    result1.classList.add('active');
-});
+// Инициализация обработчиков при загрузке страницы
+document.addEventListener('DOMContentLoaded', initializePopupHandlers);

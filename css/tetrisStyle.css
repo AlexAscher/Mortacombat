@@ -1,0 +1,279 @@
+@import url('./tetromino.css');
+.getback{
+    position: absolute;
+    left: 2%;
+    top: 4%;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    background-color: rgba(14, 13, 18, 1);
+}
+
+.game-content__inner {
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    
+}
+
+.game-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #3760E3,
+        0 0 82px #3760E3,
+        0 0 92px #3760E3,
+        0 0 102px #3760E3,
+        0 0 151px #3760E3;
+}
+
+.canvas-bg {
+    background-color: rgba(0, 0, 0);
+    margin-right: 15px;
+    width: 320px;
+}
+
+canvas {
+    width: 100%;
+}
+
+canvas,
+.game-content__next,
+.game-content__score {
+    animation: pulsate 1.5s infinite alternate;
+    border: 1px solid #fff;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem #3760E3,
+        0 0 0.8rem #3760E3,
+        0 0 2.8rem #3760E3,
+        inset 0 0 1.3rem #3760E3;
+}
+
+.game-content__next {
+    width: 150px;
+    height: 180px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: rgba(0, 0, 0);
+    margin-bottom: 15px;
+}
+
+.next__title {
+    position: absolute;
+    top: 10px;
+    left: 55px;
+    display: block;
+    width: 100%;
+    color: white;
+}
+
+.next__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.game-content__score {
+    background-color: rgba(0, 0, 0);
+    margin-bottom: 15px;
+    height: 100px;
+    text-align: center;
+    padding-top: 10px;
+    color: #fff;
+}
+
+.game-content__score span {
+    display: block;
+}
+
+.score__title {
+    margin-bottom: 10px;
+}
+
+.score__total {
+    font-size: 22px;
+}
+
+.game-controls {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-controls img {
+    width: 16px;
+    height: 16px;
+}
+
+.top,
+.bottom2,
+.right,
+.left {
+    width: 40px;
+    height: 40px;
+}
+
+.top {
+    transform: rotate(180deg);
+    margin-bottom: 20px;
+}
+
+.left {
+    transform: rotate(90deg);
+    position: absolute;
+    left: 0;
+}
+
+.right {
+    transform: rotate(-90deg);
+    position: absolute;
+    right: 0;
+}
+
+.game-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    border: 4px solid var(--Blue, #3760E3);
+    border-radius: 8px;
+    padding: 10rem 10rem;
+    gap: 15px;
+}
+
+.sketch-btn {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 20px;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 8px;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #3760E3, 0 0 82px #3760E3, 0 0 92px #3760E3, 0 0 102px #3760E3, 0 0 151px #3760E3;
+    box-shadow: 0 0 .2rem #fff, 0 0 .2rem #fff, 0 0 2rem #3760E3, 0 0 0.8rem #3760E3, 0 0 2.8rem #3760E3, inset 0 0 1.3rem #3760E3;
+}
+
+.sketch-btn1 {
+
+    margin-bottom: 10px;
+    font-size: 16px;
+
+    cursor: pointer;
+    
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 .2rem #fff, 0 0 .2rem #fff, 0 0 2rem #3760E3, 0 0 0.8rem #3760E3, 0 0 2.8rem #3760E3, inset 0 0 1.3rem #3760E3;
+}
+
+.diff {
+    margin-bottom: 10px;
+    font-family: TT Travels Trl;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+
+@media(min-width:993px) {
+    .game-content {
+        transform: scale(0.93);
+    }
+}
+@media(min-height:715px) {
+    .game-content {
+        transform: scale(0.93);
+    }
+}
+@media (max-width: 992px) {
+    .game-content {
+        transform: scale(0.85);
+    }
+}
+
+
+@media (max-width: 630px) {
+    .game-content {
+        transform: scale(0.7);
+    }
+}
+@media(max-height: 600px) {
+.game-menu {
+    padding: 5rem 5rem;
+}
+}
+@media (max-width: 500px) {
+    .game-content {
+        transform: scale(0.6);
+    }
+}
+@media(max-height:470px){
+    .game-menu{
+        padding: 3rem 3rem;
+    }
+}
+@media (max-width: 380px) {
+    .game-content {
+        transform: scale(0.5);
+    }
+}
+
+@keyframes pulsate {
+
+    100% {
+
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #3760E3,
+            0 0 80px #3760E3,
+            0 0 90px #3760E3,
+            0 0 100px #3760E3,
+            0 0 150px #3760E3;
+
+    }
+
+    0% {
+
+        text-shadow:
+            0 0 2px #fff,
+            0 0 4px #fff,
+            0 0 6px #fff,
+            0 0 10px #3760E3,
+            0 0 45px #3760E3,
+            0 0 55px #3760E3,
+            0 0 70px #3760E3,
+            0 0 80px #3760E3;
+
+    }
+}

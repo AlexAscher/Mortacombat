@@ -751,6 +751,7 @@ body {
     border-radius: 8px;
     border: none;
     font-weight: 700;
+    color: black;
 
 }
 
@@ -790,6 +791,7 @@ body {
     background: linear-gradient(90deg, #E0AA3E 0%, #E0AA3E 0.01%, #F9F295 21.94%, #E0AA3E 57.75%, #FAF398 102.67%, #B88A44 114.07%);
     border-radius: 50%;
     margin-right: 10px;
+    flex-shrink: 0;
 }
 
 .option-btn:hover {
@@ -841,6 +843,15 @@ body {
     padding: 5px;
 
 }
+
+.select-item option:active {
+    background-color: #f0e68c;
+    /* Укажите нужный цвет фона */
+    color: #000000;
+    /* Цвет текста */
+}
+
+
 
 .pop_up {
     width: 100%;

@@ -231,9 +231,9 @@ canvas,
     padding: 5rem 5rem;
 }
 }
-@media (max-width: 500px) {
+@media (max-width: 420px) {
     .game-content {
-        transform: scale(0.6);
+        transform: scale(0.65);
     }
 }
 @media(max-height:470px){
@@ -243,7 +243,7 @@ canvas,
 }
 @media (max-width: 380px) {
     .game-content {
-        transform: scale(0.5);
+        transform: scale(0.55);
     }
 }
 

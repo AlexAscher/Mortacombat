@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/katalogstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.css">
 </head>
 
 <body>
@@ -181,7 +182,8 @@
                             </div>
                         </div>
                         <div class="polzunok">
-                            <input type="range" min="0" max="10000" step="1" value="100" class="slider">
+                            <input type="range" min="0" max="10000" step="1" value="100" class="slider" id="fromSlider">
+        <input type="range" min="0" max="10000" step="1" value="10000" class="slider" id="toSlider">
                         </div>
                     </div>
                     <div class="genres d-lg-none d-block">
@@ -870,6 +872,7 @@
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js"></script>
     <script src="./js/slick.min.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/resize.js"></script>

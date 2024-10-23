@@ -5,4 +5,5 @@ document.addEventListener('DOMContentLoaded', function () {
     slider.addEventListener('input', function () {
         fromH5.textContent = slider.value;
     });
+    
 });

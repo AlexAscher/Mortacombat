@@ -595,27 +595,12 @@ details li {
 
 .polzunok {
     margin-top: 18px;
+    
 }
 
 .polzunok input {
     width: 100%;
 
-}
-
-.slider {
-    -webkit-appearance: none;
-    /* Переопределение стилей CSS по умолчанию */
-    appearance: none;
-    background: #36EBCF;
-    /* Серый фон */
-    outline: none;
-    /* Удалить контур */
-    opacity: 0.7;
-    /* Установите прозрачность (для эффектов наведения мыши при наведении курсора) */
-    -webkit-transition: .2s;
-    /* 0.2 секундный переход при наведении курсора */
-    transition: opacity .2s;
-    border-radius: 15px;
 }
 
 .line {
@@ -624,7 +609,43 @@ details li {
     width: 100%;
     position: relative;
 }
-
+.noUi-target{
+    -webkit-appearance: none;
+    /* Переопределение стилей CSS по умолчанию */
+    appearance: none;
+    background-color: #3760E3;
+    -webkit-transition: .2s;
+    /* 0.2 секундный переход при наведении курсора */
+    transition: opacity .2s;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    height: 2px;
+}
+.noUi-connect{
+    background-color: #36EBCF;
+}
+.noUi-connects{
+    background-color: #3760E3 !important;
+}
+.noUi-handle::after, .noUi-handle::before{
+    display: none;
+}
+.noUi-handle{
+    box-shadow: none;
+    
+    border-radius: 100%;
+    background-color: black;
+    border: 3px solid #36EBCF;
+}
+.noUi-horizontal .noUi-handle{
+    height: 20px;
+    width: 20px;
+    top: -8px;
+}
+.noUi-horizontal .noUi-handle-upper{
+    right: 0px;
+}
 .polzunok img {
     position: absolute;
     left: 0;

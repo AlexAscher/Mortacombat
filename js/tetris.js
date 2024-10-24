@@ -174,5 +174,3 @@ const app = (difficulty) => {
     leftArrow.addEventListener('click', () => MoveOnClickLeft(tetromino, playArea))
 }
 createGameMenu(app)
-// tetrisResize()
-// window.addEventListener('resize', tetrisResize)

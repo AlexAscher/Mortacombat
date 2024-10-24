@@ -96,21 +96,3 @@ export const showNextTetromino = (name) => {
             break
     }
 }
-// export const tetrisResize = () => {
-//     const content = document.querySelector('.game-content');
-//     console.log('Screen width:', window.screen.width); // Проверка ширины экрана
-//     let scaleValue;
-
-//     if (window.screen.width < 630 && window.screen.width > 500) {
-//         scaleValue = '1.3';
-//     } else if (window.screen.width < 500 && window.screen.width > 380) {
-//         scaleValue = '1.5';
-//     } else if (window.screen.width < 380) {
-//         scaleValue = '1.8';
-//     } else {
-//         scaleValue = '1';
-//     }
-
-//     content.style.transform = `scale(${scaleValue})`;
-//     console.log(`Scale changed to: ${scaleValue}`); // Отладка
-// };

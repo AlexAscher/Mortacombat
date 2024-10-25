@@ -83,18 +83,27 @@ const app = (difficulty) => {
                 }
             }
         }
-        for (let row = playArea.length - 1; row > 0; row--) {
+        for (let row = playArea.length - 1; row >= 0; row--) {
+            // Проверяем, полностью ли заполнен текущий ряд
             if (playArea[row].every(ceil => !!ceil)) {
-                for (let r = row; r >= 0; r--) {
+                // Сдвигаем все ряды выше вниз
+                for (let r = row; r > 0; r--) {
                     for (let col = 0; col < playArea[r].length; col++) {
-                        playArea[r][col] = playArea[r - 1][col]
+                        playArea[r][col] = playArea[r - 1][col];
                     }
                 }
-                scoreBlock.innerHTML = score += 5
-            } else {
-                row--
+                // Очищаем верхний ряд, чтобы не оставлять "мусор"
+                for (let col = 0; col < playArea[0].length; col++) {
+                    playArea[0][col] = 0;
+                }
+                
+                // Увеличиваем счет и обновляем отображение
+                score += 5;
+                scoreBlock.innerHTML = score;
+        
+                // Проверяем снова текущий ряд, так как он теперь содержит данные из ряда выше
+                row++;
             }
-
         }
         tetromino = createTetromino() //
     }

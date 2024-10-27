@@ -595,7 +595,7 @@ details li {
 
 .polzunok {
     margin-top: 18px;
-    
+
 }
 
 .polzunok input {
@@ -609,7 +609,8 @@ details li {
     width: 100%;
     position: relative;
 }
-.noUi-target{
+
+.noUi-target {
     -webkit-appearance: none;
     /* Переопределение стилей CSS по умолчанию */
     appearance: none;
@@ -622,30 +623,38 @@ details li {
     border: none;
     height: 2px;
 }
-.noUi-connect{
+
+.noUi-connect {
     background-color: #36EBCF;
 }
-.noUi-connects{
+
+.noUi-connects {
     background-color: #3760E3 !important;
 }
-.noUi-handle::after, .noUi-handle::before{
+
+.noUi-handle::after,
+.noUi-handle::before {
     display: none;
 }
-.noUi-handle{
+
+.noUi-handle {
     box-shadow: none;
-    
+
     border-radius: 100%;
     background-color: black;
     border: 3px solid #36EBCF;
 }
-.noUi-horizontal .noUi-handle{
+
+.noUi-horizontal .noUi-handle {
     height: 20px;
     width: 20px;
     top: -8px;
 }
-.noUi-horizontal .noUi-handle-upper{
+
+.noUi-horizontal .noUi-handle-upper {
     right: 0px;
 }
+
 .polzunok img {
     position: absolute;
     left: 0;
@@ -843,6 +852,12 @@ details li {
     opacity: 0px;
     border: 3px solid var(--Blue, #3760E3);
     position: relative;
+}
+
+@media(max-width:768px)and (min-width:576px) {
+    .tovari {
+        height: 380px;
+    }
 }
 
 .tovari h3 {

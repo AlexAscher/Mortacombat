@@ -126,14 +126,15 @@ body {
 .menu__btn {
     display: flex;
     align-items: center;
-    position: absolute;
-    top: 5px;
+    position: fixed;
+    top: 40px;
     width: 57px;
     height: 10px;
     cursor: pointer;
     z-index: 11;
     text-align: center;
     border-radius: 10px;
+
 }
 
 .menu__btn>span,
@@ -220,7 +221,7 @@ body {
 
 @media(max-width:767px) {
     .menu__btn {
-        top: 13px;
+        top: 36px;
     }
 }
 

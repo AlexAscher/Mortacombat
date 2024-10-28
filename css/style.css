@@ -118,8 +118,8 @@ body {
 .menu__btn {
     display: flex;
     align-items: center;
-    position: absolute;
-    top: 5px;
+    position: fixed;
+    top: 40px;
     width: 57px;
     height: 10px;
     cursor: pointer;

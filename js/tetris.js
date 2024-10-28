@@ -1,225 +1,212 @@
-// Импорт необходимых модулей и компонентов
+// Импортируем необходимые функции и переменные из других модулей
 import {
-    tetrisContent // Контент игры Тетрис
+    tetrisContent
 } from "./gameContents.js";
 import {
-    createGameMenu // Функция для создания меню игры
-} from "./gameMenu.js"
+    createGameMenu
+} from "./gameMenu.js";
 import {
-    colors, // Цвета для тетромино
-    tetrominoItems // Формы и конфигурации тетромино
+    colors,
+    tetrominoItems
 } from "./tetrominoItems.js";
 import {
-    IsValidPos, // Функция для проверки допустимой позиции тетромино
-    MoveOnClickLeft, // Функция для перемещения тетромино влево
-    MoveOnClickRight, // Функция для перемещения тетромино вправо
-    rapidFallOnDown, // Функция для быстрого падения тетромино вниз
-    rotateOnClickUp, // Функция для поворота тетромино
-    ShowGameMessage, // Функция для отображения сообщений на канвасе
-    showNextTetromino, // Функция для отображения следующего тетромино
-    shuffle, // Функция для перемешивания порядка тетромино
+    IsValidPos,
+    MoveOnClickLeft,
+    MoveOnClickRight,
+    rapidFallOnDown,
+    rotateOnClickUp,
+    ShowGameMessage,
+    showNextTetromino,
+    shuffle
 } from "./utilis.js";
 
-// Основная функция приложения для настройки игры
+// Основная функция приложения, принимает уровень сложности игры
 const app = (difficulty) => {
-    const gameContent = document.querySelector('.game-content'); // Выбор области контента игры
-    gameContent.innerHTML = ''; // Очистка предыдущего контента
-    gameContent.innerHTML = tetrisContent; // Добавление нового контента игры
-    const canvas = document.getElementById('game'); // Получение элемента канваса
-    const context = canvas.getContext('2d'); // Получение контекста рисования канваса
-    const startBtn = document.querySelector('.start'); // Кнопка начала игры
-    const pauseBtn = document.querySelector('.pause'); // Кнопка паузы
-    const restartBtn = document.querySelector('.restart'); // Кнопка перезапуска
-    const scoreBlock = document.querySelector('.score__total'); // Блок для отображения счета
-    const topArrow = document.querySelector('.top'); // Стрелка вверх для поворота
-    const bottomArrow = document.querySelector('.bottom2'); // Стрелка вниз для быстрого падения
-    const leftArrow = document.querySelector('.left'); // Стрелка влево для перемещения
-    const rightArrow = document.querySelector('.right'); // Стрелка вправо для перемещения
-    const squareSize = 32; // Размер квадратов тетромино
-    let tetrominoOrder = []; // Порядок тетромино
-    let playArea = []; // Игровая область
+    // Настраиваем основное содержимое игры
+    const gameContent = document.querySelector('.game-content');
+    gameContent.innerHTML = '';
+    gameContent.innerHTML = tetrisContent;
 
-    // Инициализация игровой области
+    // Инициализируем канвас и контекст рисования
+    const canvas = document.getElementById('game');
+    const context = canvas.getContext('2d');
+
+    // Получаем элементы управления
+    const startBtn = document.querySelector('.start');
+    const pauseBtn = document.querySelector('.pause');
+    const restartBtn = document.querySelector('.restart');
+    const scoreBlock = document.querySelector('.score__total');
+    const topArrow = document.querySelector('.top');
+    const bottomArrow = document.querySelector('.bottom');
+    const leftArrow = document.querySelector('.left');
+    const rightArrow = document.querySelector('.right');
+
+    // Размер одного квадрата тетрис-формы
+    const squareSize = 32;
+    let tetrominoOrder = []; // Порядок выпадения тетромино
+    let playArea = []; // Игровая зона
+
+    // Инициализируем игровую зону - сетка 10x20
     for (let row = -2; row < 20; row++) {
         playArea[row] = [];
         for (let col = 0; col < 10; col++) {
-            playArea[row][col] = 0; // Заполнение области нулями
+            playArea[row][col] = 0; // 0 - пустая клетка
         }
     }
 
-    let count = 0; // Счетчик кадров
-    let tetromino = createTetromino(); // Создание нового тетромино
-    let score = 0; // Игровой счет
+    let count = 0; // Счётчик для контроля скорости падения
+    let tetromino = createTetromino(); // Текущая тетромино
+    let score = 0; // Счёт игрока
     let isGameOver = false; // Флаг окончания игры
-    let requestAnimationId = null; // ID анимации для управления игрой
+    let requestAnimationId = null; // ID анимации
 
-    // Функция для отображения сообщения об окончании игры
+    // Функция отображения сообщения об окончании игры
     const ShowGameOver = () => {
-        cancelAnimationFrame(requestAnimationId); // Остановка анимации
-        isGameOver = true; // Установка флага окончания игры
-        ShowGameMessage(context, canvas, 'GAME OVER!'); // Отображение сообщения
-    }
+        cancelAnimationFrame(requestAnimationId); // Останавливаем анимацию
+        isGameOver = true;
+        ShowGameMessage(context, canvas, 'GAME OVER!'); // Показываем сообщение
+    };
 
-    // Функция для создания нового тетромино
+    // Функция создания новой тетромино
     function createTetromino() {
+        // Если порядок тетромино пуст, заполняем его и перемешиваем
         if (tetrominoOrder.length === 0) {
-            tetrominoOrder = ['I', 'J', 'L', 'O', 'S', 'T', 'Z']; // Начальный порядок тетромино
-            shuffle(tetrominoOrder); // Перемешивание порядка тетромино
+            tetrominoOrder = ['I', 'J', 'L', 'O', 'S', 'T', 'Z'];
+            shuffle(tetrominoOrder);
         }
-        const name = tetrominoOrder.pop(); // Получение имени следующего тетромино
-        const matrix = tetrominoItems[name]; // Получение матрицы тетромино
-        const col = playArea[0].length / 2 - Math.ceil(matrix[0].length / 2); // Начальная колонка для тетромино
-        const row = name === 'I' ? -1 : -2; // Начальная строка для тетромино 'I' выше, для остальных ниже
+        const name = tetrominoOrder.pop(); // Получаем последний элемент
+        const matrix = tetrominoItems[name]; // Матрица формы тетромино
+        const col = playArea[0].length / 2 - Math.ceil(matrix[0].length / 2); // Центрируем
+        const row = name === 'I' ? -1 : -2; // Начальное положение
+
         return {
             name,
             matrix,
             row,
             col
-        };
+        }; // Возвращаем объект тетромино
     }
 
-    // Функция для размещения тетромино в игровой области
+    // Функция для размещения текущей тетромино на игровом поле
     const PlaceTetromino = () => {
         for (let row = 0; row < tetromino.matrix.length; row++) {
             for (let col = 0; col < tetromino.matrix[row].length; col++) {
-                if (tetromino.matrix[row][col]) { // Если в текущей ячейке есть часть тетромино
-                    if (tetromino.row + row < 0) {
-                        return ShowGameOver(); // Если тетромино выходит за верхнюю границу, игра окончена
+                if (tetromino.matrix[row][col]) {
+                    if (tetromino.row + row < 0) { // Если вышли за верх, заканчиваем игру
+                        return ShowGameOver();
                     }
-                    playArea[tetromino.row + row][tetromino.col + col] = tetromino.name; // Размещение тетромино
+                    playArea[tetromino.row + row][tetromino.col + col] = tetromino.name; // Устанавливаем тетромино
                 }
             }
         }
 
-        // Проверка на заполненные ряды
-        for (let row = playArea.length - 1; row >= 0; row--) {
-            // Проверяем, полностью ли заполнен текущий ряд
-            if (playArea[row].every(ceil => !!ceil)) {
-                // Сдвигаем все ряды выше вниз
-                for (let r = row; r > 0; r--) {
+        // Удаление заполненных строк и пересчёт счёта
+        for (let row = playArea.length - 1; row > 0; row--) {
+            if (playArea[row].every(ceil => !!ceil)) { // Проверяем заполнение строки
+                for (let r = row; r >= 0; r--) { // Сдвигаем строки вниз
                     for (let col = 0; col < playArea[r].length; col++) {
-                        playArea[r][col] = playArea[r - 1][col]; // Копируем ряды вниз
+                        playArea[r][col] = playArea[r - 1][col];
                     }
                 }
-                // Очищаем верхний ряд, чтобы не оставлять "мусор"
-                for (let col = 0; col < playArea[0].length; col++) {
-                    playArea[0][col] = 0; // Очистка верхнего ряда
-                }
-                
-                // Увеличиваем счет и обновляем отображение
-                score += 5; // Увеличение счета за удаление ряда
-                scoreBlock.innerHTML = score; // Обновление отображения счета
-
-                // Проверяем снова текущий ряд, так как он теперь содержит данные из ряда выше
-                row++; // Возвращаемся к текущему ряду для повторной проверки
+                scoreBlock.innerHTML = score += 5; // Добавляем очки
+            } else {
+                row--; // Переход к следующей строке
             }
         }
-        tetromino = createTetromino(); // Создание нового тетромино
-    }
+        tetromino = createTetromino(); // Создаём новую тетромино
+    };
 
-    // Основная функция игры
+    // Основной игровой цикл
     const game = () => {
-        showNextTetromino(tetrominoOrder[tetrominoOrder.length - 1]); // Отображение следующего тетромино
-        requestAnimationId = requestAnimationFrame(game); // Запуск следующего кадра игры
-        context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight); // Очистка канваса для перерисовки
+        showNextTetromino(tetrominoOrder[tetrominoOrder.length - 1]); // Показываем следующую фигуру
+        requestAnimationId = requestAnimationFrame(game); // Запрашиваем следующий кадр
+        context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight); // Очищаем канвас
 
-        // Рисуем текущую игровую область
+        // Рисуем игровую зону
         for (let row = 0; row < 20; row++) {
             for (let col = 0; col < 10; col++) {
-                if (playArea[row][col]) { // Если ячейка не пустая
-                    const name = playArea[row][col]; // Получение имени тетромино
-                    context.fillStyle = colors[name]; // Установка цвета тетромино
-                    context.fillRect(col * squareSize, row * squareSize, squareSize - 1, squareSize - 1); // Рисование квадрата тетромино
+                if (playArea[row][col]) {
+                    const name = playArea[row][col];
+                    context.fillStyle = colors[name];
+                    context.fillRect(col * squareSize, row * squareSize, squareSize - 1, squareSize - 1);
                 }
             }
         }
 
-        if (tetromino) { // Если есть активное тетромино
-            if (++count > difficulty) { // Увеличиваем счетчик кадров
-                tetromino.row++; // Понижаем строку тетромино
-                count = 0; // Сброс счетчика
+        // Перемещение текущей тетромино
+        if (tetromino) {
+            if (++count > difficulty) { // Контролируем скорость падения
+                tetromino.row++;
+                count = 0;
             }
-
-            // Проверка на допустимость позиции
-            if (!IsValidPos(tetromino.matrix, tetromino.row, tetromino.col, playArea)) {
-                tetromino.row--; // Если позиция недопустима, возвращаем тетромино вверх
-                PlaceTetromino(); // Размещаем тетромино в области
+            if (!IsValidPos(tetromino.matrix, tetromino.row, tetromino.col, playArea)) { // Если нет места, фиксируем
+                tetromino.row--;
+                PlaceTetromino();
             }
-
-            // Рисуем активное тетромино
-            context.fillStyle = colors[tetromino.name]; // Установка цвета для текущего тетромино
+            context.fillStyle = colors[tetromino.name];
             for (let row = 0; row < tetromino.matrix.length; row++) {
                 for (let col = 0; col < tetromino.matrix[row].length; col++) {
-                    if (tetromino.matrix[row][col]) { // Если ячейка не пустая
-                        context.fillRect((tetromino.col + col) * squareSize, (tetromino.row + row) * squareSize, squareSize - 1, squareSize - 1); // Рисуем квадрат
+                    if (tetromino.matrix[row][col]) { // Рисуем текущую фигуру
+                        context.fillRect(
+                            (tetromino.col + col) * squareSize,
+                            (tetromino.row + row) * squareSize,
+                            squareSize - 1,
+                            squareSize - 1
+                        );
                     }
                 }
             }
         }
     };
 
-    // Привязываем события к кнопкам
-    startBtn.onclick = () => {
-        // Начинаем игру при нажатии кнопки "Начать"
-        if (!requestAnimationId) { // Если игра не запущена
-            isGameOver = false; // Сбрасываем флаг окончания игры
-            game(); // Запуск игры
-            ShowGameMessage(context, canvas, ''); // Очищаем сообщение об окончании игры
+    // Обработка нажатий на клавиши
+    document.addEventListener('keydown', (e) => {
+        if (isGameOver) return;
+
+        if (e.key === "ArrowDown") {
+            e.preventDefault();
+            rapidFallOnDown(tetromino, playArea, PlaceTetromino);
         }
-    };
-
-    pauseBtn.onclick = () => {
-        // Пауза игры
-        cancelAnimationFrame(requestAnimationId); // Останавливаем анимацию
-        requestAnimationId = null; // Сбрасываем ID анимации
-    };
-
-    restartBtn.onclick = () => {
-        // Перезапуск игры
-        cancelAnimationFrame(requestAnimationId); // Останавливаем анимацию
-        requestAnimationId = null; // Сбрасываем ID анимации
-        app(difficulty); // Запускаем новую игру
-    };
-
-    // Привязываем события к клавишам управления
-    topArrow.onclick = () => {
-        // Поворот тетромино
-        rotateOnClickUp(tetromino, playArea); // Поворот текущего тетромино
-    };
-
-    bottomArrow.onclick = () => {
-        // Быстрое падение тетромино
-        rapidFallOnDown(tetromino, playArea); // Быстрое падение текущего тетромино
-    };
-
-    leftArrow.onclick = () => {
-        // Перемещение тетромино влево
-        MoveOnClickLeft(tetromino, playArea); // Перемещение текущего тетромино влево
-    };
-
-    rightArrow.onclick = () => {
-        // Перемещение тетромино вправо
-        MoveOnClickRight(tetromino, playArea); // Перемещение текущего тетромино вправо
-    };
-
-    // Обработчик события нажатия клавиши для управления тетромино
-    document.addEventListener('keydown', (event) => {
-        switch (event.code) { // В зависимости от нажатой клавиши
-            case 'ArrowLeft':
-                MoveOnClickLeft(tetromino, playArea); // Перемещение влево
-                break;
-            case 'ArrowRight':
-                MoveOnClickRight(tetromino, playArea); // Перемещение вправо
-                break;
-            case 'ArrowDown':
-                rapidFallOnDown(tetromino, playArea); // Быстрое падение
-                break;
-            case 'ArrowUp':
-                rotateOnClickUp(tetromino, playArea); // Поворот
-                break;
+        if (e.key === "ArrowUp") {
+            e.preventDefault();
+            rotateOnClickUp(tetromino, playArea);
+        }
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            MoveOnClickRight(tetromino, playArea);
+        }
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            MoveOnClickLeft(tetromino, playArea);
         }
     });
-}
 
-// Инициализация приложения с заданной сложностью
-app(20);
+    // Обработка нажатий на кнопки управления
+    startBtn.addEventListener("click", () => {
+        requestAnimationId = requestAnimationFrame(game); // Запуск игры
+        startBtn.disabled = true;
+        pauseBtn.disabled = false;
+    });
+
+    pauseBtn.addEventListener('click', () => {
+        cancelAnimationFrame(requestAnimationId); // Пауза
+        ShowGameMessage(context, canvas, 'PAUSED');
+        pauseBtn.disabled = true;
+        startBtn.disabled = false;
+    });
+
+    restartBtn.addEventListener('click', () => {
+        window.location.reload(); // Перезагрузка страницы
+    });
+
+    // Управление движением с помощью кнопок
+    topArrow.addEventListener('click', () => rotateOnClickUp(tetromino, playArea));
+    bottomArrow.addEventListener('click', () => rapidFallOnDown(tetromino, playArea, PlaceTetromino));
+    rightArrow.addEventListener('click', () => MoveOnClickRight(tetromino, playArea));
+    leftArrow.addEventListener('click', () => MoveOnClickLeft(tetromino, playArea));
+};
+
+// Создаём меню игры и передаём основную функцию
+createGameMenu(app);
+// tetrisResize()
+// window.addEventListener('resize', tetrisResize)

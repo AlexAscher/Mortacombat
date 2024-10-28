@@ -116,8 +116,9 @@ header {
 .menu__btn {
     display: flex;
     align-items: center;
-    position: fixed;
-    top: 56px;
+    position: absolute;
+    /* Начальное позиционирование */
+    top: 13px;
     width: 57px;
     height: 10px;
     cursor: pointer;
@@ -127,11 +128,18 @@ header {
 
 }
 
-@media(max-width:768px) {
-    .menu__btn {
-        top: 53px;
-    }
+/* Стили для кнопки меню, когда чекбокс отмечен */
+#menu__toggle:checked~.menu__btn {
+    position: fixed;
+    /* Позиционирование при открытом меню */
+    top: 57px;
+    /* Можно изменить отступ сверху, если нужно */
+    right: 36px;
+    /* Можно изменить отступ справа, если нужно */
 }
+
+
+
 
 .menu__btn>span,
 .menu__btn>span::before,

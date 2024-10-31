@@ -208,5 +208,3 @@ const app = (difficulty) => {
 
 // Создаём меню игры и передаём основную функцию
 createGameMenu(app);
-// tetrisResize()
-// window.addEventListener('resize', tetrisResize)

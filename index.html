@@ -313,9 +313,12 @@
                                 <p>Оставить заказ</p>
                                 <form action="" id="form">
                                     <input type="text" name="Имя" placeholder="Имя" required>
-                                    <input type="text" name="Телефон" placeholder="Телефон" pattern="\+?\d{11,12}"
-                                        title="Введите телефон в формате +12345678901 или 12345678901" required>
-                                    <input type="text" name="Почта" placeholder="Почта" required>
+                                    <input type="text" name="Почта" placeholder="Почта"
+                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                        title="Введите корректный email" required>
+
+                                    <input type="text" name="Телефон" placeholder="Телефон" id="phone"
+                                        title="Введите телефон в формате +7-xxx-xxx-xx-xx" required>
                                     <input type="text" name="Любимая игра 1" placeholder="Любимая игра" required>
                                     <div id="input0"></div>
                                     <div class="add" onclick="addInput(this)" id="add">+</div>
@@ -406,9 +409,13 @@
                                     <p>Оставить заказ</p>
                                     <form action="" class="form">
                                         <input type="text" name="Имя" placeholder="Имя" required>
-                                        <input type="text" name="Телефон" placeholder="Телефон" pattern="\+?\d{11,12}"
-                                            title="Введите телефон в формате +12345678901 или 12345678901" required>
-                                        <input type="text" name="Почта" placeholder="Почта" required>
+
+                                        <input type="text" name="Почта" placeholder="Почта"
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                            title="Введите корректный email" required>
+
+                                        <input type="text" name="Телефон" placeholder="Телефон" id="phone"
+                                            title="Введите телефон в формате +7-xxx-xxx-xx-xx" required>
                                         <input type="text" name="Любимая игра 1" placeholder="Любимая игра" required>
                                         <div id="input0"></div>
                                         <div class="add" onclick="addInput(this)" id="add">+</div>
@@ -466,7 +473,6 @@
     </section>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="./js/tetris.js" type="module"></script>
     <script src="./js/resize.js"></script>
     <script src="./js/elements_height.js"></script>
     <script src="./js/modal.js"></script>

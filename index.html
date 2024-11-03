@@ -316,12 +316,16 @@
                                     <input type="text" name="Почта" placeholder="Почта"
                                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                         title="Введите корректный email" required>
+                                    <span id="emailError" class="error-message"></span>
 
                                     <input type="text" name="Телефон" placeholder="Телефон" id="phone"
-                                        title="Введите телефон в формате +7-xxx-xxx-xx-xx" required>
+                                        title="Введите телефон в формате +7(xxx)-xxx-xx-xx" required>
+                                    <span id="phoneError" class="error-message"></span>
+
                                     <input type="text" name="Любимая игра 1" placeholder="Любимая игра" required>
                                     <div id="input0"></div>
                                     <div class="add" onclick="addInput(this)" id="add">+</div>
+
                                     <div class="select1">
                                         <h3>Выберите свой любимый жанр игр:</h3>
                                         <div class="select_wrapper">
@@ -337,6 +341,7 @@
                                                 id="yourVariant">
                                         </div>
                                     </div>
+
                                     <button type="submit">Оставить заказ</button>
                                 </form>
                                 <div class="pop_up_close" data-popup-close="pop_up">&#10006</div>

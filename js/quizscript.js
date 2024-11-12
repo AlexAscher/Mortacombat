@@ -135,7 +135,7 @@ function loadQuestion() {
             selectedOption = [questAnswer.value]; // Сохраняем введенное значение в массиве selectedOption
             nextButton.style.display = 'block'; // Показываем кнопку "Далее"
         });
-    } 
+    }
     // Если вопрос содержит обычные варианты ответов
     else {
         currentQuestions.options.forEach(option => {
@@ -195,7 +195,7 @@ function nextQuestion() {
         if (correct) {
             score++; // Увеличиваем счет на 1
         }
-    } 
+    }
     // Проверяем, если выбранные ответы являются массивом и их количество совпадает с правильными ответами
     else if (Array.isArray(selectedOption) && selectedOption.length > 0 && selectedOption.every(opt => correctAnswer.includes(opt)) && selectedOption.length === correctAnswer.length) {
         score++; // Увеличиваем счет на 1, если все ответы верны
@@ -219,8 +219,30 @@ function nextQuestion() {
 
 // Функция для отображения результата викторины
 function showResult() {
-    // Отображаем количество набранных баллов и общее количество вопросов
-    resultElement.textContent = 'Вы набрали ' + score + ' из ' + quizData.length + ' баллов.'; 
+    const resultText = document.getElementById('result');
+    let resultMessage = '';
+    if (score === 10) {
+        resultMessage = 'Ты абсолютный победитель, поздравляю!';
+    } else if (score >= 7) {
+        resultMessage = 'Ты молодец, но нет предела совершенству!';
+    } else if (score >= 4) {
+        resultMessage = 'Тебе стоит потренироваться!';
+    } else {
+        resultMessage = 'Это никуда не годится! Учи и приходи заново!';
+    }
+    resultText.textContent = `Вы набрали ${score} из ${quizData.length} баллов. ${resultMessage}`;
+
+    const quizPopup = document.getElementById('pop_up');
+    const resultPopup = document.getElementById('pop_up2');
+    quizPopup.classList.remove('active'); // Закрываем окно викторины
+    resultPopup.classList.add('active'); // Открываем окно результата
+}
+
+// Функция для закрытия всплывающего окна результата
+function closeResultPopup() {
+    const resultPopup = document.getElementById('pop_up2');
+    resultPopup.classList.remove('active'); // Убираем класс активности, чтобы скрыть окно
+    resetQuiz(); // Сбрасываем викторину
 }
 
 // Функция для сброса викторины
@@ -261,13 +283,27 @@ function togglePopup(openButton, closeButton, popupElement) {
 
 // Ожидаем загрузки документа, чтобы инициализировать обработчики событий
 document.addEventListener('DOMContentLoaded', function () {
-    const openPopUp = document.getElementById('open_pop_up'); // Получаем кнопку для открытия всплывающего окна
-    const closePopUp = document.getElementById('close_pop_up'); // Получаем кнопку для закрытия всплывающего окна
-    const popUp = document.getElementById('pop_up'); // Получаем элемент всплывающего окна
+    const openPopUp = document.getElementById('open_pop_up');
+    const closePopUp = document.getElementById('close_pop_up');
+    const popUp = document.getElementById('pop_up');
+    const closeResultBtn = document.getElementById('closeResultBtn');
+    const closePopUp2 = document.getElementById('close_pop_up2');
+    const popUp2 = document.getElementById('pop_up2');
+    const popUpBody2 = document.getElementById('pop_up_body2');
 
-    togglePopup(openPopUp, closePopUp, popUp); // Инициализируем переключение всплывающего окна
+    togglePopup(openPopUp, closePopUp, popUp);
+
+    // Добавляем обработчики для закрытия окна результата
+    closeResultBtn.addEventListener('click', closeResultPopup);
+    closePopUp2.addEventListener('click', closeResultPopup);
+
+    // Добавляем обработчик для закрытия модального окна при клике вне его области
+    popUp2.addEventListener('click', function (e) {
+        if (!popUpBody2.contains(e.target)) {
+            closeResultPopup();
+        }
+    });
 });
-
 // Добавляем обработчик события для кнопки "Далее"
 nextButton.addEventListener('click', nextQuestion); // Добавляем обработчик на кнопку "Далее"
 loadQuestion(); // Загружаем первый вопрос

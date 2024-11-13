@@ -124,13 +124,14 @@ function addInput(button) {
     if (x < 2) { // Проверяем, не превышает ли количество полей 2
         const newInput = document.createElement('div'); // Создаем новый контейнер для инпута
         newInput.id = `input${x + 1}`; // Устанавливаем id для нового контейнера
-        newInput.innerHTML = `<input type="text" name="Любимая игра ${x + 2}" placeholder="Любимая игра" required><div id="input${x + 1}"></div>`; // Создаем HTML для нового поля
-        inputContainer.appendChild(newInput); // Вставляем новый HTML в контейнер
+        newInput.innerHTML = `<input type="text" name="Любимая игра ${x + 2}" placeholder="Любимая игра" required>`; // Создаем HTML для нового поля
+        inputContainer.parentNode.insertBefore(newInput, button); // Вставляем новый HTML перед кнопкой
         x++; // Увеличиваем счетчик полей
     } else {
         showStopAlert(container); // Если превышено количество полей, показываем предупреждение
     }
 }
+
 
 // Функция для показа предупреждения о лимите полей ввода
 function showStopAlert(container) {

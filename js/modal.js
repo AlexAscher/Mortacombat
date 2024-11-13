@@ -1,32 +1,56 @@
-// Инициализация обработчиков при загрузке страницы
-document.addEventListener('DOMContentLoaded', initializePopupHandlers);
+let x = 0; // Переменная для отслеживания количества добавленных полей ввода
 
 function initializePopupHandlers() {
-    const body = document.querySelector('body');
+    const body = document.querySelector('body'); // Получаем элемент body для установки обработчиков событий
 
+    // Обработчик для кликов по элементам
     body.addEventListener('click', function (e) {
-        const target = e.target;
+        const target = e.target; // Получаем элемент, на который кликнули
 
+        // Открытие попапа
         if (target.matches('[data-popup-open]')) {
-            e.preventDefault();
-            const popupId = target.getAttribute('data-popup-open');
-            const popup = document.querySelector(`[data-popup="${popupId}"]`);
+            e.preventDefault(); // Предотвращаем стандартное поведение ссылки
+            const popupId = target.getAttribute('data-popup-open'); // Получаем идентификатор попапа
+            const popup = document.querySelector(`[data-popup="${popupId}"]`); // Находим попап по идентификатору
             if (popup) {
-                popup.classList.add('active');
+                popup.classList.add('active'); // Добавляем класс для отображения попапа
             }
         }
 
+        // Закрытие попапа
         if (target.matches('[data-popup-close]')) {
-            const popupId = target.getAttribute('data-popup-close');
-            const popup = document.querySelector(`[data-popup="${popupId}"]`);
+            const popupId = target.getAttribute('data-popup-close'); // Получаем идентификатор попапа
+            const popup = document.querySelector(`[data-popup="${popupId}"]`); // Находим попап по идентификатору
             if (popup) {
-                popup.classList.remove('active');
+                popup.classList.remove('active'); // Убираем класс, чтобы скрыть попап
+            }
+        }
+
+        // Добавление нового поля ввода для любимых игр
+        if (target.matches('.add')) {
+            addInput(target);
+        }
+    });
+
+    // Обработчик для изменений в элементах формы
+    body.addEventListener('change', function (e) {
+        const target = e.target; // Получаем элемент, который изменился
+
+        // Управление показом поля "Свой вариант"
+        if (target.matches('[data-select]')) {
+            const selectval = target.value; // Получаем значение выбранного элемента
+            const anotherAnswer = target.closest('.select1').querySelector('.another_answer'); // Находим поле "Свой вариант"
+            if (selectval === 'Свой вариант') {
+                anotherAnswer.style.display = 'block'; // Показываем поле, если выбрано "Свой вариант"
+            } else {
+                anotherAnswer.style.display = 'none'; // Скрываем поле в остальных случаях
             }
         }
     });
 
+    // Обработчик для отправки формы
     body.addEventListener('submit', function (e) {
-        if (e.target.matches('form')) {
+        if (e.target.matches('form')) { // Проверяем, является ли целевой элемент формой
             e.preventDefault();
             const form = e.target;
             const emailInput = form.querySelector('input[name="Почта"]');
@@ -92,6 +116,29 @@ function initializePopupHandlers() {
         }
     });
 }
+
+// Функция для добавления нового поля ввода
+function addInput(button) {
+    const container = button.closest('.pop_up_body'); // Находим контейнер попапа
+    const inputContainer = container.querySelector(`#input${x}`); // Получаем контейнер для нового ввода
+    if (x < 2) { // Проверяем, не превышает ли количество полей 2
+        const newInput = document.createElement('div'); // Создаем новый контейнер для инпута
+        newInput.id = `input${x + 1}`; // Устанавливаем id для нового контейнера
+        newInput.innerHTML = `<input type="text" name="Любимая игра ${x + 2}" placeholder="Любимая игра" required><div id="input${x + 1}"></div>`; // Создаем HTML для нового поля
+        inputContainer.appendChild(newInput); // Вставляем новый HTML в контейнер
+        x++; // Увеличиваем счетчик полей
+    } else {
+        showStopAlert(container); // Если превышено количество полей, показываем предупреждение
+    }
+}
+
+// Функция для показа предупреждения о лимите полей ввода
+function showStopAlert(container) {
+    const stopAlert = container.querySelector('.stop'); // Находим элемент предупреждения
+    stopAlert.classList.add('active'); // Добавляем класс для показа предупреждения
+}
+
+// Инициализация обработчиков при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     initializePopupHandlers();
 
